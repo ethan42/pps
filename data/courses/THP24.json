@@ -1,0 +1,20 @@
+{
+  "code": "ΘΠ24",
+  "title": {
+    "el": "Αλγοριθμική Επίλυση Προβλημάτων"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 4,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "instructors": [
+    "Ακαδημαϊκός Υπότροφος"
+  ]
+}

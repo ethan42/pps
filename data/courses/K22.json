@@ -1,0 +1,32 @@
+{
+  "code": "Κ22",
+  "title": {
+    "el": "Λειτουργικά Συστήματα"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 4,
+    "tutorial": 0,
+    "lab": 2
+  },
+  "ects": 8.0,
+  "semester": [
+    5
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ08",
+      "type": "required"
+    },
+    {
+      "code": "Κ14",
+      "type": "recommended"
+    }
+  ],
+  "instructors": [
+    "Α. Δελής",
+    "Ε. Χατζηευθυμιάδης",
+    "Σ. Πασκαλής"
+  ]
+}

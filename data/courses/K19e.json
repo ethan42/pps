@@ -1,0 +1,23 @@
+{
+  "code": "Κ19ε",
+  "title": {
+    "el": "Εργαστήριο Ηλεκτρονικής"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 0,
+    "tutorial": 1,
+    "lab": 3
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": null,
+  "specialization_roles": {
+    "S4": "basic"
+  },
+  "instructors": [
+    "Θ. Νίκας"
+  ]
+}

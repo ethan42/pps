@@ -1,0 +1,27 @@
+{
+  "code": "ΥΣ09",
+  "title": {
+    "el": "Τεχνολογία Λογισμικού"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ10",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S3": "basic"
+  },
+  "offered_this_year": false
+}

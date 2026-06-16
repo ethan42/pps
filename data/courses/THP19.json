@@ -1,0 +1,23 @@
+{
+  "code": "ΘΠ19",
+  "title": {
+    "el": "Παράλληλοι Αλγόριθμοι"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ17",
+      "type": "recommended"
+    }
+  ]
+}

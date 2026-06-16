@@ -1,0 +1,23 @@
+{
+  "code": "ΕΠ10",
+  "title": {
+    "el": "Επεξεργασία Εικόνας"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "specialization_roles": {
+    "S6": "basic"
+  },
+  "instructors": [
+    "Ι. Μαδεμλής"
+  ]
+}

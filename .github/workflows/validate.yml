@@ -1,0 +1,23 @@
+name: Validate curriculum
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Install dependencies
+        run: pip install jsonschema
+      - name: Validate data against schemas
+        run: python scripts/validate.py
+      - name: Build bundle and check it is up to date
+        run: |
+          python scripts/build.py
+          git diff --exit-code dist/curriculum.json \
+            || (echo "::error::dist/curriculum.json is stale. Run scripts/build.py and commit." && exit 1)

@@ -1,0 +1,17 @@
+{
+  "code": "Κ02",
+  "title": {
+    "el": "Λογική Σχεδίαση"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    1
+  ],
+  "direction": null
+}

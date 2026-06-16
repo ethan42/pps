@@ -1,0 +1,31 @@
+{
+  "code": "ΘΠ02",
+  "title": {
+    "el": "Γραφικά"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ08",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "basic",
+    "S6": "basic"
+  },
+  "instructors": [
+    "Θ. Θεοχάρης",
+    "Μ. Κυριακάκος"
+  ]
+}

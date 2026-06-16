@@ -1,0 +1,20 @@
+{
+  "code": "ΠΑ2",
+  "title": {
+    "el": "Πρακτική Άσκηση ΙΙ",
+    "en": "Internship II"
+  },
+  "category": "internship",
+  "hours": {
+    "theory": 0,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 8,
+  "semester": [
+    7,
+    8
+  ],
+  "direction": null,
+  "notes": "Annual course described in prose (guide p. 83); code assigned for this dataset."
+}

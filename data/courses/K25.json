@@ -1,0 +1,29 @@
+{
+  "code": "Κ25",
+  "title": {
+    "el": "Θεωρία Υπολογισμού"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": "CS",
+  "prerequisites": [
+    {
+      "code": "Κ17",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S2": "mandatory"
+  },
+  "instructors": [
+    "Π. Ροντογιάννης"
+  ]
+}

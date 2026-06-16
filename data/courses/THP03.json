@@ -1,0 +1,29 @@
+{
+  "code": "ΘΠ03",
+  "title": {
+    "el": "Επιστημονικοί Υπολογισμοί (Αριθμητική Γραμμική Άλγεβρα)"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ03",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "basic"
+  },
+  "instructors": [
+    "Μ. Λουκά"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "academic_year": "2025-2026",
+  "institution": {
+    "el": "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών",
+    "en": "National and Kapodistrian University of Athens"
+  },
+  "department": {
+    "el": "Τμήμα Πληροφορικής και Τηλεπικοινωνιών",
+    "en": "Department of Informatics and Telecommunications"
+  },
+  "degree_title": {
+    "el": "Πληροφορική και Τηλεπικοινωνίες",
+    "en": "Informatics and Telecommunications"
+  },
+  "directions": [
+    {
+      "id": "CS",
+      "name": {
+        "el": "Επιστήμη Υπολογιστών",
+        "en": "Computer Science"
+      }
+    },
+    {
+      "id": "CET",
+      "name": {
+        "el": "Μηχανική Υπολογιστών και Τηλεπικοινωνιών",
+        "en": "Computer Engineering and Telecoms"
+      }
+    }
+  ],
+  "graduation_rules": {
+    "direction_elective_choose": 4,
+    "projects_choose": 1,
+    "free_courses_max": 2,
+    "specialization_award": "Claim a specialization by taking its 2 mandatory ΕΥ courses plus 4 of the 8 optional courses that are basic (Β) to it.",
+    "source_text": "Επιλογή 1η-4η: a student may claim one or two of six specializations by choosing 4 of the 5/6 direction electives (ΕΥ), 1 of 2 projects, and 4 of 8 basic optionals per specialization, plus 0-2 free courses. See guide pp. 61-62. TODO: confirm total_ects and per-category counts."
+  }
+}

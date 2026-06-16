@@ -1,0 +1,17 @@
+{
+  "code": "ΓΠ05",
+  "title": {
+    "el": "Διοίκηση Έργων και Τεχνολογίες Παρουσίασης και Συγγραφής Επιστημονικών Εκθέσεων"
+  },
+  "category": "general_education",
+  "hours": {
+    "theory": 2,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 2.0,
+  "semester": [
+    8
+  ],
+  "direction": null
+}

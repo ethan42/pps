@@ -1,0 +1,20 @@
+{
+  "code": "ΥΣ24",
+  "title": {
+    "el": "Σχεδίαση & Χρήση Περιβαλλόντων η- Μάθησης"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "instructors": [
+    "Α. Γόγουλου (μάθημα επιλογής για απόκτηση"
+  ]
+}

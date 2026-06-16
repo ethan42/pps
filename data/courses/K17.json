@@ -1,0 +1,31 @@
+{
+  "code": "Κ17",
+  "title": {
+    "el": "Αλγόριθμοι και Πολυπλοκότητα"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 4,
+    "tutorial": 2,
+    "lab": 0
+  },
+  "ects": 8.0,
+  "semester": [
+    4
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ08",
+      "type": "recommended"
+    },
+    {
+      "code": "Κ09",
+      "type": "recommended"
+    }
+  ],
+  "instructors": [
+    "Α. Γιαννοπούλου",
+    "Ο. Φουρτουνέλλη"
+  ]
+}

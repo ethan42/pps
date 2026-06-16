@@ -1,0 +1,23 @@
+{
+  "code": "Κ06",
+  "title": {
+    "el": "Ανάλυση ΙΙ"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 4,
+    "tutorial": 2,
+    "lab": 0
+  },
+  "ects": 8.0,
+  "semester": [
+    3
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ01",
+      "type": "recommended"
+    }
+  ]
+}

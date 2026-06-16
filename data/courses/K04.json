@@ -1,0 +1,17 @@
+{
+  "code": "Κ04",
+  "title": {
+    "el": "Εισαγωγή στον Προγραμματισμό"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 2
+  },
+  "ects": 7.0,
+  "semester": [
+    1
+  ],
+  "direction": null
+}

@@ -1,0 +1,30 @@
+{
+  "code": "Κ19",
+  "title": {
+    "el": "Ηλεκτρονική"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": "CET",
+  "prerequisites": [
+    {
+      "code": "Κ11ε",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S4": "mandatory"
+  },
+  "instructors": [
+    "Δ. Συβρίδης",
+    "Θ. Νίκας"
+  ]
+}

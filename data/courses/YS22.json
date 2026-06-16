@@ -1,0 +1,21 @@
+{
+  "code": "ΥΣ22",
+  "title": {
+    "el": "Ψηφιακή Προσβασιμότητα & Υποστηρικτικές Τεχνολογίες Πληροφορικής"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 2,
+    "tutorial": 0,
+    "lab": 2
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "instructors": [
+    "Γ. Κουρουπέτρογλου",
+    "Α."
+  ]
+}

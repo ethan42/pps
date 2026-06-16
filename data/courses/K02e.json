@@ -1,0 +1,17 @@
+{
+  "code": "Κ02ε",
+  "title": {
+    "el": "Εργαστήριο Λογικής Σχεδίασης"
+  },
+  "category": "standalone_lab",
+  "hours": {
+    "theory": 0,
+    "tutorial": 0,
+    "lab": 2
+  },
+  "ects": 2.0,
+  "semester": [
+    1
+  ],
+  "direction": null
+}

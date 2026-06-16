@@ -1,0 +1,20 @@
+{
+  "code": "ΥΣ20",
+  "title": {
+    "el": "Ιστορία της Πληροφορικής και των Τηλεπικοινωνιών"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 4.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "instructors": [
+    "Α. Τύμπας"
+  ]
+}

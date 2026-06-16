@@ -1,0 +1,33 @@
+{
+  "code": "Κ15",
+  "title": {
+    "el": "Αριθμητική Ανάλυση"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": "CS",
+  "prerequisites": [
+    {
+      "code": "Κ01",
+      "type": "recommended"
+    },
+    {
+      "code": "Κ03",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "mandatory"
+  },
+  "instructors": [
+    "Μ. Λουκά"
+  ]
+}

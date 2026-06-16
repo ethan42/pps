@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dit.uoa.gr/curriculum/schema/course.schema.json",
+  "title": "Course",
+  "description": "A single course in the DIT@EKPA undergraduate programme. One JSON file per course, keyed by its code.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["code", "title", "category", "ects"],
+  "properties": {
+    "code": {
+      "$ref": "#/$defs/courseCode",
+      "description": "Natural key, e.g. Κ17, Κ23γ, ΘΠ01, ΕΠ13, ΓΠ07."
+    },
+    "title": { "$ref": "#/$defs/bilingual" },
+    "category": {
+      "type": "string",
+      "description": "Curriculum bucket the course belongs to.",
+      "enum": [
+        "compulsory",
+        "standalone_lab",
+        "direction_elective",
+        "project",
+        "general_education",
+        "optional",
+        "free",
+        "thesis",
+        "internship"
+      ]
+    },
+    "hours": {
+      "type": "object",
+      "description": "Weekly teaching hours: Θεωρία / Φροντιστήριο / Εργαστήριο.",
+      "additionalProperties": false,
+      "required": ["theory", "tutorial", "lab"],
+      "properties": {
+        "theory": { "type": "integer", "minimum": 0 },
+        "tutorial": { "type": "integer", "minimum": 0 },
+        "lab": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "ects": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 30,
+      "description": "ECTS credits. Fractional values allowed (e.g. free courses from other departments)."
+    },
+    "semester": {
+      "type": "array",
+      "description": "Semester(s) in which the course is offered (1-8). Most courses have one; a few list two. Absent for free electives, which are not tied to a PPS semester.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "type": "integer", "minimum": 1, "maximum": 8 }
+    },
+    "term": {
+      "type": "string",
+      "description": "Offering term, used for free electives (ΕΛ) which are listed per term.",
+      "enum": ["winter", "spring", "annual"]
+    },
+    "department": {
+      "$ref": "#/$defs/bilingual",
+      "description": "For free electives: the EKPA department that offers the course."
+    },
+    "direction": {
+      "description": "CS or CET. Set for direction electives (ΕΥ) and projects; null otherwise.",
+      "enum": ["CS", "CET", null]
+    },
+    "prerequisites": {
+      "type": "array",
+      "description": "Prerequisite courses. type=required (bold in the PDF) vs recommended (italic).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["code", "type"],
+        "properties": {
+          "code": { "$ref": "#/$defs/courseCode" },
+          "type": { "type": "string", "enum": ["required", "recommended"] }
+        }
+      }
+    },
+    "specialization_roles": {
+      "type": "object",
+      "description": "Per-specialization role. mandatory (Υ) = required to claim that specialization; basic (Β) = core elective of it. Absent key = not part of that specialization.",
+      "additionalProperties": false,
+      "properties": {
+        "S1": { "$ref": "#/$defs/specRole" },
+        "S2": { "$ref": "#/$defs/specRole" },
+        "S3": { "$ref": "#/$defs/specRole" },
+        "S4": { "$ref": "#/$defs/specRole" },
+        "S5": { "$ref": "#/$defs/specRole" },
+        "S6": { "$ref": "#/$defs/specRole" }
+      }
+    },
+    "offered_this_year": {
+      "type": "boolean",
+      "description": "false when the title carries (ΔΠ) = not offered this academic year. Defaults to true.",
+      "default": true
+    },
+    "instructors": {
+      "type": "array",
+      "description": "Teaching staff, as printed in the per-semester schedule.",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "description_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional link to the external analytical course description."
+    },
+    "notes": {
+      "type": "string",
+      "description": "Free text for edge cases or data-entry caveats."
+    }
+  },
+  "$defs": {
+    "courseCode": {
+      "type": "string",
+      "pattern": "^[A-Za-zΑ-Ωα-ωΐΰίϊόάέύϋήώ0-9]{2,12}$"
+    },
+    "bilingual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["el"],
+      "properties": {
+        "el": { "type": "string", "minLength": 1, "description": "Greek (source of truth)." },
+        "en": { "type": "string", "minLength": 1, "description": "English (optional)." }
+      }
+    },
+    "specRole": {
+      "type": "string",
+      "enum": ["mandatory", "basic"]
+    }
+  }
+}

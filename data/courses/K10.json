@@ -1,0 +1,23 @@
+{
+  "code": "Κ10",
+  "title": {
+    "el": "Αντικειμενοστραφής Προγραμματισμός"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 2
+  },
+  "ects": 8.0,
+  "semester": [
+    3
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ04",
+      "type": "recommended"
+    }
+  ]
+}

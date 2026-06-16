@@ -1,0 +1,20 @@
+{
+  "code": "Κ01",
+  "title": {
+    "el": "Ανάλυση Ι"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 4,
+    "tutorial": 2,
+    "lab": 0
+  },
+  "ects": 8.0,
+  "semester": [
+    2
+  ],
+  "direction": null,
+  "instructors": [
+    "Μ. Παπαδάτος"
+  ]
+}

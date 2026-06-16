@@ -1,0 +1,21 @@
+{
+  "code": "Κ12",
+  "title": {
+    "el": "Ηλεκτρομαγνητισμός, Οπτική, Σύγχρονη Φυσική"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 4,
+    "tutorial": 4,
+    "lab": 0
+  },
+  "ects": 8.0,
+  "semester": [
+    2
+  ],
+  "direction": null,
+  "instructors": [
+    "Δ. Συβρίδης",
+    "Α. Τσίπουρας"
+  ]
+}

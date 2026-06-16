@@ -1,0 +1,30 @@
+{
+  "code": "Κ18",
+  "title": {
+    "el": "Υλοποίηση Συστημάτων Βάσεων Δεδομένων"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": "CS",
+  "prerequisites": [
+    {
+      "code": "Κ29",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S2": "mandatory",
+    "S3": "mandatory"
+  },
+  "instructors": [
+    "Ι. Ιωαννίδης"
+  ]
+}

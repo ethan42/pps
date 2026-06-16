@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dit.uoa.gr/curriculum/schema/specialization.schema.json",
+  "title": "Specialization",
+  "description": "An Ειδίκευση (S1-S6). Each belongs to exactly one direction.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "direction"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": ["S1", "S2", "S3", "S4", "S5", "S6"]
+    },
+    "name": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["el"],
+      "properties": {
+        "el": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    },
+    "direction": { "type": "string", "enum": ["CS", "CET"] },
+    "notes": { "type": "string" }
+  }
+}

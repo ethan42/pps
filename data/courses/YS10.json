@@ -1,0 +1,21 @@
+{
+  "code": "ΥΣ10",
+  "title": {
+    "el": "Διδακτική της Πληροφορικής"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 2,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "instructors": [
+    "Α. Γόγουλου",
+    "Λ. Χαλάτση (μάθημα υποχρεωτικό για απόκτηση"
+  ]
+}

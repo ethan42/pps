@@ -1,0 +1,29 @@
+{
+  "code": "ΘΠ12",
+  "title": {
+    "el": "Προηγμένα Θέματα Αλγορίθμων"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ17",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "basic"
+  },
+  "instructors": [
+    "Β. Νάκος"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dit.uoa.gr/curriculum/schema/program.schema.json",
+  "title": "Program",
+  "description": "Top-level metadata and graduation rules for one academic year's undergraduate programme.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["academic_year", "institution", "department", "degree_title", "directions"],
+  "properties": {
+    "academic_year": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{4}$",
+      "description": "e.g. 2025-2026."
+    },
+    "institution": { "$ref": "#/$defs/bilingual" },
+    "department": { "$ref": "#/$defs/bilingual" },
+    "degree_title": { "$ref": "#/$defs/bilingual" },
+    "directions": {
+      "type": "array",
+      "description": "Κατευθύνσεις: CS and CET.",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name"],
+        "properties": {
+          "id": { "type": "string", "enum": ["CS", "CET"] },
+          "name": { "$ref": "#/$defs/bilingual" }
+        }
+      }
+    },
+    "graduation_rules": {
+      "type": "object",
+      "description": "Structured graduation requirements. Prose from the guide retained in `source_text` for traceability.",
+      "additionalProperties": false,
+      "properties": {
+        "total_ects": { "type": "number", "exclusiveMinimum": 0 },
+        "min_compulsory_courses": { "type": "integer", "minimum": 0 },
+        "direction_elective_choose": { "type": "integer", "minimum": 0 },
+        "direction_elective_offered": { "type": "integer", "minimum": 0 },
+        "projects_choose": { "type": "integer", "minimum": 0 },
+        "free_courses_max": { "type": "integer", "minimum": 0 },
+        "specialization_award": {
+          "type": "string",
+          "description": "How a specialization is awarded (e.g. 2 mandatory ΕΥ + 4 of 8 basic optionals)."
+        },
+        "source_text": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "bilingual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["el"],
+      "properties": {
+        "el": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "code": "Κ20α",
+  "title": {
+    "el": "Μαθηματικά Πληροφορικής"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 4,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": "CS",
+  "prerequisites": [
+    {
+      "code": "Κ09",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "mandatory"
+  },
+  "instructors": [
+    "Σ. Κολλιόπουλος"
+  ]
+}

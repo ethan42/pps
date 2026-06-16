@@ -1,0 +1,30 @@
+{
+  "code": "Κ32",
+  "title": {
+    "el": "Ψηφιακή Επεξεργασία Σήματος"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 4,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": "CET",
+  "prerequisites": [
+    {
+      "code": "Κ11",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S6": "mandatory"
+  },
+  "instructors": [
+    "Γ. Αλεξανδρόπουλος",
+    "Α. Λυγίζου"
+  ]
+}

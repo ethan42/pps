@@ -1,0 +1,27 @@
+{
+  "code": "ΘΠ04",
+  "title": {
+    "el": "Παράλληλα Συστήματα"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ14",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S3": "basic",
+    "S4": "basic"
+  }
+}

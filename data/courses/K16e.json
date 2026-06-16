@@ -1,0 +1,22 @@
+{
+  "code": "Κ16ε",
+  "title": {
+    "el": "Εργαστήριο Δικτύων Επικοινωνιών Ι"
+  },
+  "category": "standalone_lab",
+  "hours": {
+    "theory": 0,
+    "tutorial": 0,
+    "lab": 2
+  },
+  "ects": 2.0,
+  "semester": [
+    4,
+    5
+  ],
+  "direction": null,
+  "instructors": [
+    "Ι. Σταυρακάκης",
+    "Α. Βάιος"
+  ]
+}

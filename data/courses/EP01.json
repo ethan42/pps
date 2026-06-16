@@ -1,0 +1,29 @@
+{
+  "code": "ΕΠ01",
+  "title": {
+    "el": "Σχεδίαση VLSI Κυκλωμάτων"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ19",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S4": "basic"
+  },
+  "instructors": [
+    "Θ. Νίκας"
+  ]
+}

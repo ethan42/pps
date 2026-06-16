@@ -1,0 +1,31 @@
+{
+  "code": "ΥΣ08",
+  "title": {
+    "el": "Επικοινωνία Ανθρώπου Μηχανής"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ29",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S2": "basic",
+    "S3": "basic"
+  },
+  "instructors": [
+    "Μ. Ρούσσου",
+    "Α. Κολοβού (μάθημα επιλογής για απόκτηση"
+  ]
+}

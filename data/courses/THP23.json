@@ -1,0 +1,24 @@
+{
+  "code": "ΘΠ23",
+  "title": {
+    "el": "Υπολογιστική Θεωρία Μηχανικής Μάθησης"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 4,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "specialization_roles": {
+    "S1": "basic",
+    "S2": "basic"
+  },
+  "instructors": [
+    "Εντεταλμένος Διδάσκων"
+  ]
+}

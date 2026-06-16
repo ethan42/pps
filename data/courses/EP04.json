@@ -1,0 +1,29 @@
+{
+  "code": "ΕΠ04",
+  "title": {
+    "el": "Ψηφιακές Επικοινωνίες"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ21",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S5": "basic"
+  },
+  "instructors": [
+    "Ν. Πασσάς"
+  ]
+}

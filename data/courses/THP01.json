@@ -1,0 +1,30 @@
+{
+  "code": "ΘΠ01",
+  "title": {
+    "el": "Αρχές Γλωσσών Προγραμματισμού"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ08",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "basic",
+    "S2": "basic"
+  },
+  "instructors": [
+    "Π. Ροντογιάννης"
+  ]
+}

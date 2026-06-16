@@ -1,0 +1,23 @@
+{
+  "code": "Κ20β",
+  "title": {
+    "el": "Εφαρμοσμένα Μαθηματικά"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    2
+  ],
+  "direction": null,
+  "specialization_roles": {
+    "S6": "basic"
+  },
+  "instructors": [
+    "Μ. Λουκά"
+  ]
+}

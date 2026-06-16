@@ -1,0 +1,17 @@
+{
+  "code": "Κ13",
+  "title": {
+    "el": "Πιθανότητες και Στατιστική"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    3
+  ],
+  "direction": null
+}

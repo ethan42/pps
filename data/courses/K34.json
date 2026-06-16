@@ -1,0 +1,29 @@
+{
+  "code": "Κ34",
+  "title": {
+    "el": "Διαχείριση Δικτύων"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": "CET",
+  "prerequisites": [
+    {
+      "code": "Κ16",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S5": "mandatory"
+  },
+  "instructors": [
+    "Α. Αλωνιστιώτη"
+  ]
+}

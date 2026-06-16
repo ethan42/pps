@@ -1,0 +1,30 @@
+{
+  "code": "ΥΣ11",
+  "title": {
+    "el": "Τεχνικές Εξόρυξης Δεδομένων"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ18",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S2": "basic"
+  },
+  "instructors": [
+    "Δ. Γουνόπουλος",
+    "Α. Κολοβού"
+  ]
+}

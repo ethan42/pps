@@ -1,0 +1,30 @@
+{
+  "code": "Κ23β",
+  "title": {
+    "el": "Ανάπτυξη Λογισμικού για Συστήματα Δικτύων και Τηλεπικοινωνιών"
+  },
+  "category": "project",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 3
+  },
+  "ects": 8.0,
+  "semester": [
+    7
+  ],
+  "direction": "CET",
+  "prerequisites": [
+    {
+      "code": "Κ16",
+      "type": "required"
+    },
+    {
+      "code": "Κ33",
+      "type": "recommended"
+    }
+  ],
+  "instructors": [
+    "Α. Αλωνιστιώτη"
+  ]
+}

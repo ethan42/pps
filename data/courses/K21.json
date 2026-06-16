@@ -1,0 +1,27 @@
+{
+  "code": "Κ21",
+  "title": {
+    "el": "Συστήματα Επικοινωνιών"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 1
+  },
+  "ects": 7.0,
+  "semester": [
+    4
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ11",
+      "type": "recommended"
+    }
+  ],
+  "instructors": [
+    "Γ. Κανέλλος",
+    "Α. Λυγίζου"
+  ]
+}

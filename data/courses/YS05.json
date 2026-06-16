@@ -1,0 +1,30 @@
+{
+  "code": "ΥΣ05",
+  "title": {
+    "el": "Λογικός Προγραμματισμός"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ08",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S2": "basic"
+  },
+  "instructors": [
+    "Ι. Καράλη",
+    "Π. Σταματόπουλος"
+  ]
+}

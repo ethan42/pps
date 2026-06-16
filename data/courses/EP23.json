@@ -1,0 +1,26 @@
+{
+  "code": "ΕΠ23",
+  "title": {
+    "el": "Ανάλυση Εικόνας και Τεχνητή Όραση"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    7
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ32",
+      "type": "required"
+    }
+  ],
+  "instructors": [
+    "Ι. Μαδεμλής"
+  ]
+}

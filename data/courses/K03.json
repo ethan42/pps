@@ -1,0 +1,17 @@
+{
+  "code": "Κ03",
+  "title": {
+    "el": "Γραμμική Άλγεβρα"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 3,
+    "tutorial": 2,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    1
+  ],
+  "direction": null
+}

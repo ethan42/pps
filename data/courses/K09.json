@@ -1,0 +1,17 @@
+{
+  "code": "Κ09",
+  "title": {
+    "el": "Διακριτά Μαθηματικά"
+  },
+  "category": "compulsory",
+  "hours": {
+    "theory": 4,
+    "tutorial": 2,
+    "lab": 0
+  },
+  "ects": 7.0,
+  "semester": [
+    1
+  ],
+  "direction": null
+}

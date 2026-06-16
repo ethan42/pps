@@ -1,0 +1,29 @@
+{
+  "code": "ΘΠ10",
+  "title": {
+    "el": "Θεωρία Γραφημάτων"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ20α",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S1": "basic"
+  },
+  "instructors": [
+    "Σ. Κολλιόπουλος"
+  ]
+}

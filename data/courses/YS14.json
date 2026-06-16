@@ -1,0 +1,30 @@
+{
+  "code": "ΥΣ14",
+  "title": {
+    "el": "Τεχνολογίες Εφαρμογών Διαδικτύου"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 2,
+    "tutorial": 1,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ10",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S3": "basic",
+    "S5": "basic"
+  },
+  "instructors": [
+    "Ι. Χαμόδρακας"
+  ]
+}

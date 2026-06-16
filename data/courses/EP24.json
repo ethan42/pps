@@ -1,0 +1,21 @@
+{
+  "code": "ΕΠ24",
+  "title": {
+    "el": "Μικροοικονομική Ανάλυση"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 4.0,
+  "semester": [
+    8
+  ],
+  "direction": null,
+  "instructors": [
+    "Δ. Βαρουτάς",
+    "Δ. Κατσιάνης"
+  ]
+}

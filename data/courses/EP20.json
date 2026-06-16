@@ -1,0 +1,30 @@
+{
+  "code": "ΕΠ20",
+  "title": {
+    "el": "Τηλεπικοινωνιακά Δίκτυα"
+  },
+  "category": "optional",
+  "hours": {
+    "theory": 3,
+    "tutorial": 0,
+    "lab": 1
+  },
+  "ects": 6.0,
+  "semester": [
+    5
+  ],
+  "direction": null,
+  "prerequisites": [
+    {
+      "code": "Κ16",
+      "type": "required"
+    }
+  ],
+  "specialization_roles": {
+    "S5": "basic"
+  },
+  "instructors": [
+    "Δ. Βαρουτάς",
+    "Δ.Κατσιάνης"
+  ]
+}

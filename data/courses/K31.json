@@ -1,0 +1,37 @@
+{
+  "code": "Κ31",
+  "title": {
+    "el": "Μεταγλωττιστές"
+  },
+  "category": "direction_elective",
+  "hours": {
+    "theory": 4,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6.0,
+  "semester": [
+    6
+  ],
+  "direction": "CS",
+  "prerequisites": [
+    {
+      "code": "Κ08",
+      "type": "required"
+    },
+    {
+      "code": "Κ10",
+      "type": "required"
+    },
+    {
+      "code": "Κ14",
+      "type": "recommended"
+    }
+  ],
+  "specialization_roles": {
+    "S3": "mandatory"
+  },
+  "instructors": [
+    "Ι. Σμαραγδάκης"
+  ]
+}
