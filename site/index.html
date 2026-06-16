@@ -64,7 +64,13 @@
           <p class="muted small">Courses placed by semester (left → right). Solid links are required prerequisites,
             dashed links are recommended. Hover a course to trace its chain; click for details.</p>
         </div>
-        <div class="graph-filters" id="graphFilters"></div>
+        <div class="graph-controls">
+          <div class="seg" id="graphLabelToggle" role="group" aria-label="Node labels">
+            <button data-glabel="code" class="on">Codes</button>
+            <button data-glabel="name">Names</button>
+          </div>
+          <div class="graph-filters" id="graphFilters"></div>
+        </div>
       </div>
       <div class="graph-scroll"><svg id="prereqGraph"></svg></div>
       <div id="graphTooltip" class="graph-tooltip" hidden></div>

@@ -18,6 +18,7 @@ const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 let LANG = "el";
 let DATA = null;
 let GRAPH_CATS = new Set(["compulsory", "direction_elective", "project", "standalone_lab"]);
+let GRAPH_LABEL = "code"; // "code" (default) | "name"
 const charts = {};
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -51,8 +52,22 @@ async function load() {
 
   wireLang();
   wireDrawer();
+  wireGraphLabel();
   renderAll();
+  applyHash();
+  addEventListener("hashchange", applyHash);
 })();
+
+// Deep-linking: #names switches the graph to full names; #course=CODE opens a course.
+function applyHash() {
+  const h = new URLSearchParams(location.hash.slice(1));
+  if (h.has("names") && GRAPH_LABEL !== "name") {
+    GRAPH_LABEL = "name";
+    $$("#graphLabelToggle button").forEach((x) => x.classList.toggle("on", x.dataset.glabel === "name"));
+    renderGraph();
+  }
+  if (h.get("course")) openDrawer(h.get("course"));
+}
 
 function renderAll() {
   renderHero();
@@ -209,6 +224,32 @@ function renderDirectionSplit() {
 }
 
 /* ----------------------------------------------------------- prereq graph */
+function wireGraphLabel() {
+  $$("#graphLabelToggle button").forEach((b) => b.onclick = () => {
+    GRAPH_LABEL = b.dataset.glabel;
+    $$("#graphLabelToggle button").forEach((x) => x.classList.toggle("on", x === b));
+    renderGraph();
+  });
+}
+
+// Greedily wrap a string into at most `maxLines` lines of ~`maxChars`, ellipsizing overflow.
+function wrapLabel(text, maxChars, maxLines) {
+  const words = text.split(/\s+/);
+  const lines = [];
+  let cur = "";
+  for (const w of words) {
+    if (!cur) cur = w;
+    else if ((cur + " " + w).length <= maxChars) cur += " " + w;
+    else { lines.push(cur); cur = w; if (lines.length === maxLines) break; }
+  }
+  if (lines.length < maxLines && cur) lines.push(cur);
+  if (lines.length === maxLines) {
+    const used = lines.join(" ").split(/\s+/).length;
+    if (used < words.length) lines[maxLines - 1] = lines[maxLines - 1].replace(/.{1}$/, "…");
+  }
+  return lines;
+}
+
 function renderGraphFilters() {
   const cats = ["compulsory", "direction_elective", "project", "standalone_lab", "optional", "general_education"];
   $("#graphFilters").innerHTML = cats.map((c) =>
@@ -235,8 +276,10 @@ function renderGraph() {
   const nodes = DATA.courses.filter((c) => linked.has(c.code) && inScope(c));
   const sem = (c) => Math.min(...c.semester);
 
-  // layout: columns by semester
-  const COLW = 132, NODEW = 96, NODEH = 26, GAPY = 12, PADTOP = 40, PADX = 18;
+  // layout: columns by semester — sizing depends on label mode
+  const named = GRAPH_LABEL === "name";
+  const COLW = named ? 182 : 132, NODEW = named ? 162 : 96,
+        NODEH = named ? 38 : 26, GAPY = named ? 11 : 12, PADTOP = 40, PADX = 18;
   const cols = {};
   nodes.forEach((c) => (cols[sem(c)] ||= []).push(c));
   Object.values(cols).forEach((list) => list.sort((a, b) => a.category.localeCompare(b.category) || a.code.localeCompare(b.code)));
@@ -284,7 +327,17 @@ function renderGraph() {
   nodeSel.append("rect").attr("width", NODEW).attr("height", NODEH).attr("rx", 7)
     .attr("fill", (c) => catColor(c.category))
     .attr("opacity", (c) => c.offered_this_year === false ? 0.45 : 1);
-  nodeSel.append("text").attr("x", NODEW / 2).attr("y", NODEH / 2 + 3).attr("text-anchor", "middle").text((c) => c.code);
+  if (named) {
+    nodeSel.each(function (c) {
+      const lines = wrapLabel(title(c), 24, 2);
+      const t = d3.select(this).append("text").attr("x", NODEW / 2).attr("text-anchor", "middle")
+        .style("font-size", "8px");
+      const y0 = NODEH / 2 - (lines.length - 1) * 4.6 + 3;
+      lines.forEach((ln, i) => t.append("tspan").attr("x", NODEW / 2).attr("y", y0 + i * 9.2).text(ln));
+    });
+  } else {
+    nodeSel.append("text").attr("x", NODEW / 2).attr("y", NODEH / 2 + 3).attr("text-anchor", "middle").text((c) => c.code);
+  }
 
   // interactivity: hover highlights connected chain
   const adj = new Map();
@@ -414,6 +467,13 @@ function wireDrawer() {
 }
 function closeDrawer() { $("#drawer").hidden = true; }
 
+const T = (el, en) => (LANG === "el" ? el : en);
+const TERM = {
+  winter: () => T("Χειμερινό", "Winter"),
+  spring: () => T("Εαρινό", "Spring"),
+  annual: () => T("Ετήσιο", "Annual"),
+};
+
 function openDrawer(code) {
   const c = DATA.courses.find((x) => x.code === code);
   if (!c) return;
@@ -422,25 +482,54 @@ function openDrawer(code) {
     const t = DATA.courses.find((x) => x.code === cc);
     return `<span class="d-chip ${extra}" data-jump="${cc}">${cc}${t ? ` <small>${title(t)}</small>` : ""}</span>`;
   };
-  const roleName = (r) => r === "mandatory" ? (LANG === "el" ? "Υποχρεωτικό (Υ)" : "Mandatory (Υ)") : (LANG === "el" ? "Βασικό (Β)" : "Basic (Β)");
+  const roleName = (r) => r === "mandatory" ? T("Υποχρεωτικό (Υ)", "Mandatory (Υ)") : T("Βασικό (Β)", "Basic (Β)");
+  const dirName = (id) => { const d = DATA.program.directions.find((x) => x.id === id); return d ? `${id} · ${d.name?.[LANG] || d.name?.el}` : id; };
+  const enTitle = c.title?.en && c.title.en !== c.title?.el ? c.title.en : null;
+  const weekly = c.hours ? c.hours.theory + c.hours.tutorial + c.hours.lab : null;
+  const cell = (k, v) => `<div class="cell"><div class="k">${k}</div><div class="v">${v}</div></div>`;
+
+  const cells = [];
+  cells.push(cell("ECTS", c.ects ?? "—"));
+  if ((c.semester || []).length) cells.push(cell(T("Εξάμηνο", "Semester"), c.semester.map((s) => `${s}${T("ο", "")}`).join(" / ")));
+  if (c.hours) cells.push(cell(T("Ώρες Θ/Φ/Ε", "Hours Th/Tut/Lab"), `${c.hours.theory}/${c.hours.tutorial}/${c.hours.lab}`));
+  if (weekly != null) cells.push(cell(T("Ώρες/εβδομάδα", "Weekly hours"), weekly));
+  if (c.direction) cells.push(cell(T("Κατεύθυνση", "Direction"), dirName(c.direction)));
+  if (c.term) cells.push(cell(T("Περίοδος", "Term"), (TERM[c.term] || (() => c.term))()));
+  cells.push(cell(T("Προσφέρεται φέτος", "Offered this year"), c.offered_this_year === false ? T("Όχι", "No") : T("Ναι", "Yes")));
+
+  const sections = [];
+  if ((c.prerequisites || []).length)
+    sections.push(`<div class="d-sec"><h4>${T("Προαπαιτούμενα", "Prerequisites")}</h4>
+      <div class="d-chiplist">${c.prerequisites.map((p) => chip(p.code, p.type === "recommended" ? "rec" : "req")).join("")}</div>
+      <p class="muted small" style="margin:8px 0 0">${T("Συνεχόμενο = υποχρεωτικό, διακεκομμένο = συνιστώμενο", "Solid = required, dashed = recommended")}</p></div>`);
+  if (dependents.length)
+    sections.push(`<div class="d-sec"><h4>${T("Απαιτείται για", "Required by")}</h4><div class="d-chiplist">${dependents.map((d) => chip(d.code)).join("")}</div></div>`);
+  if (c.specialization_roles && Object.keys(c.specialization_roles).length)
+    sections.push(`<div class="d-sec"><h4>${T("Ειδικεύσεις", "Specializations")}</h4><div class="d-chiplist">${Object.entries(c.specialization_roles).map(([s, r]) => {
+      const sp = DATA.specializations.find((x) => x.id === s);
+      const i = DATA.specializations.findIndex((x) => x.id === s);
+      return `<span class="d-chip"><span class="spec-pill ${r === "basic" ? "b" : ""}" style="background:${SPEC_COLORS[i]};color:#0a0e1a">${s.slice(1)}</span> ${sp?.name?.[LANG] || sp?.name?.el} <small>${roleName(r)}</small></span>`;
+    }).join("")}</div></div>`);
+  if ((c.instructors || []).length)
+    sections.push(`<div class="d-sec"><h4>${T("Διδάσκοντες", "Instructors")} <span class="muted">· ${c.instructors.length}</span></h4><div class="d-people">${c.instructors.join(" · ")}</div></div>`);
+  if (c.department)
+    sections.push(`<div class="d-sec"><h4>${T("Τμήμα", "Department")}</h4><div class="d-people">${c.department?.[LANG] || c.department?.el}</div></div>`);
+  if (c.description_url)
+    sections.push(`<div class="d-sec"><h4>${T("Αναλυτική περιγραφή", "Full description")}</h4><a class="d-link" href="${c.description_url}" target="_blank" rel="noopener">${T("Άνοιγμα συνδέσμου", "Open link")} ↗</a></div>`);
+  if (c.notes)
+    sections.push(`<div class="d-sec"><h4>${T("Σημειώσεις", "Notes")}</h4><div class="muted small">${c.notes}</div></div>`);
 
   $("#drawerContent").innerHTML = `
     <div class="d-code">${c.code}</div>
-    <div class="d-title">${title(c)}</div>
-    <span class="tag" style="background:${catColor(c.category)}22;color:${catColor(c.category)}"><span class="dot" style="background:${catColor(c.category)}"></span>${catLabel(c.category)}</span>
-    ${c.offered_this_year === false ? `<span class="tag" style="background:#ef444422;color:#f87171;margin-left:6px">${LANG === "el" ? "Δεν προσφέρεται φέτος" : "Not offered this year"}</span>` : ""}
-    <div class="d-grid">
-      <div class="cell"><div class="k">ECTS</div><div class="v">${c.ects ?? "—"}</div></div>
-      <div class="cell"><div class="k">${LANG === "el" ? "Εξάμηνο" : "Semester"}</div><div class="v">${(c.semester || []).join(" / ") || "—"}</div></div>
-      ${c.hours ? `<div class="cell"><div class="k">${LANG === "el" ? "Ώρες Θ/Φ/Ε" : "Hours T/Tut/Lab"}</div><div class="v">${c.hours.theory}/${c.hours.tutorial}/${c.hours.lab}</div></div>` : ""}
-      ${c.direction ? `<div class="cell"><div class="k">${LANG === "el" ? "Κατεύθυνση" : "Direction"}</div><div class="v">${c.direction}</div></div>` : ""}
+    <div class="d-title">${c.title?.el || c.code}</div>
+    ${enTitle ? `<div class="d-title-en">${enTitle}</div>` : ""}
+    <div class="d-tags">
+      <span class="tag" style="background:${catColor(c.category)}22;color:${catColor(c.category)}"><span class="dot" style="background:${catColor(c.category)}"></span>${catLabel(c.category)}</span>
+      ${c.offered_this_year === false ? `<span class="tag" style="background:#ef444422;color:#f87171">${T("Δεν προσφέρεται φέτος", "Not offered this year")}</span>` : ""}
     </div>
-    ${(c.prerequisites || []).length ? `<div class="d-sec"><h4>${LANG === "el" ? "Προαπαιτούμενα" : "Prerequisites"}</h4><div class="d-chiplist">${c.prerequisites.map((p) => chip(p.code, p.type === "recommended" ? "rec" : "req")).join("")}</div><p class="muted small" style="margin:8px 0 0">${LANG === "el" ? "Συνεχόμενο = υποχρεωτικό, διακεκομμένο = συνιστώμενο" : "Solid = required, dashed = recommended"}</p></div>` : ""}
-    ${dependents.length ? `<div class="d-sec"><h4>${LANG === "el" ? "Απαιτείται για" : "Required by"}</h4><div class="d-chiplist">${dependents.map((d) => chip(d.code)).join("")}</div></div>` : ""}
-    ${c.specialization_roles && Object.keys(c.specialization_roles).length ? `<div class="d-sec"><h4>${LANG === "el" ? "Ειδικεύσεις" : "Specializations"}</h4><div class="d-chiplist">${Object.entries(c.specialization_roles).map(([s, r]) => { const sp = DATA.specializations.find((x) => x.id === s); return `<span class="d-chip">${s} · ${sp?.name?.[LANG] || sp?.name?.el} <small>${roleName(r)}</small></span>`; }).join("")}</div></div>` : ""}
-    ${(c.instructors || []).length ? `<div class="d-sec"><h4>${LANG === "el" ? "Διδάσκοντες" : "Instructors"}</h4><div class="d-people">${c.instructors.join(" · ")}</div></div>` : ""}
-    ${c.department ? `<div class="d-sec"><h4>${LANG === "el" ? "Τμήμα" : "Department"}</h4><div class="d-people">${c.department?.[LANG] || c.department?.el}${c.term ? ` · ${c.term}` : ""}</div></div>` : ""}
-    ${c.notes ? `<div class="d-sec"><h4>${LANG === "el" ? "Σημειώσεις" : "Notes"}</h4><div class="muted small">${c.notes}</div></div>` : ""}
+    <div class="d-grid">${cells.join("")}</div>
+    ${sections.join("")}
+    <details class="d-raw"><summary>${T("Πλήρη δεδομένα (JSON)", "Raw data (JSON)")}</summary><pre>${JSON.stringify(c, null, 2)}</pre></details>
   `;
   $("#drawer").hidden = false;
   $$("#drawerContent [data-jump]").forEach((el) => el.onclick = () => openDrawer(el.dataset.jump));
