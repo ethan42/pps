@@ -23,8 +23,35 @@ scripts/
   build.py                  Bundle data/ → dist/curriculum.json
 dist/
   curriculum.json           Generated single-file bundle for consumers
-.github/workflows/validate.yml   CI: validate on every push / PR
+site/                       Static dashboard (Curriculum Atlas) — reads the bundle
+  index.html  styles.css  app.js
+.github/workflows/
+  validate.yml              CI: validate on every push / PR
+  deploy-site.yml           Build + deploy the dashboard to GitHub Pages
 ```
+
+## Website (Curriculum Atlas)
+
+`site/` is a dependency-free static dashboard that visualises the whole
+curriculum from `dist/curriculum.json`: headline figures (courses, ECTS on offer,
+offered-this-year, prerequisite links, instructors), charts (category mix, course
+load per semester, specialization depth, teaching-hours mix), an interactive
+**prerequisite-flow graph** (courses laid out by semester; solid links = required,
+dashed = recommended; hover to trace a chain), and a searchable/filterable course
+explorer with a detail drawer. Bilingual (EL/EN) toggle.
+
+**Deploy:** the `deploy-site.yml` workflow validates the data, rebuilds the bundle,
+and publishes to GitHub Pages on every push to `main`. One-time setup: repo
+**Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+**Preview locally:** serve the repo root and open the site —
+
+```bash
+python -m http.server 8000      # then visit http://localhost:8000/site/
+```
+
+(The page loads `./curriculum.json` when deployed, falling back to
+`../dist/curriculum.json` for local preview, so no copy step is needed.)
 
 ## Usage
 

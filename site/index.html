@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIT @ EKPA — Curriculum Atlas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-glow"></div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="hero-top">
+        <div class="badge" id="yearBadge">2025–2026</div>
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button data-lang="el" class="active">ΕΛ</button>
+          <button data-lang="en">EN</button>
+        </div>
+      </div>
+      <h1 id="deptTitle">Curriculum Atlas</h1>
+      <p class="hero-sub" id="instTitle"></p>
+      <div class="hero-meta" id="heroMeta"></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats" id="statCards" aria-label="Key figures"></section>
+
+    <section class="grid-2">
+      <article class="panel">
+        <h2 class="panel-title">Courses by category <span id="catSubtitle" class="muted"></span></h2>
+        <div class="chart-wrap"><canvas id="categoryChart"></canvas></div>
+        <div id="categoryLegend" class="legend"></div>
+      </article>
+      <article class="panel">
+        <h2 class="panel-title">Course load by semester</h2>
+        <p class="muted small">Compulsory backbone + how electives are distributed across the 8 semesters.</p>
+        <div class="chart-wrap"><canvas id="semesterChart"></canvas></div>
+      </article>
+    </section>
+
+    <section class="grid-2">
+      <article class="panel">
+        <h2 class="panel-title">Specialization depth</h2>
+        <p class="muted small">Mandatory (Υ) and basic (Β) courses available to claim each specialization.</p>
+        <div class="chart-wrap"><canvas id="specChart"></canvas></div>
+      </article>
+      <article class="panel">
+        <h2 class="panel-title">Teaching hours mix</h2>
+        <p class="muted small">Weekly theory / tutorial / lab hours across the catalogue.</p>
+        <div class="chart-wrap"><canvas id="hoursChart"></canvas></div>
+        <div id="directionSplit" class="dirsplit"></div>
+      </article>
+    </section>
+
+    <section class="panel graph-panel">
+      <div class="panel-head">
+        <div>
+          <h2 class="panel-title">Prerequisite flow</h2>
+          <p class="muted small">Courses placed by semester (left → right). Solid links are required prerequisites,
+            dashed links are recommended. Hover a course to trace its chain; click for details.</p>
+        </div>
+        <div class="graph-filters" id="graphFilters"></div>
+      </div>
+      <div class="graph-scroll"><svg id="prereqGraph"></svg></div>
+      <div id="graphTooltip" class="graph-tooltip" hidden></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Course explorer <span id="explorerCount" class="muted"></span></h2>
+        <input id="search" class="search" type="search" placeholder="Search code, title, instructor…" />
+      </div>
+      <div class="filters" id="explorerFilters"></div>
+      <div class="table-wrap">
+        <table id="courseTable">
+          <thead>
+            <tr>
+              <th data-sort="code">Code</th>
+              <th data-sort="title">Title</th>
+              <th data-sort="category">Category</th>
+              <th data-sort="semester" class="num">Sem</th>
+              <th data-sort="ects" class="num">ECTS</th>
+              <th data-sort="prereq" class="num">Pre</th>
+              <th data-sort="spec">Spec</th>
+            </tr>
+          </thead>
+          <tbody id="courseTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="panel" id="topInstructorsPanel">
+      <h2 class="panel-title">Most-loaded instructors</h2>
+      <div id="topInstructors" class="bars"></div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="footerNote"></span>
+    <a href="https://github.com/" id="repoLink">Source data · GitHub</a>
+  </footer>
+
+  <!-- Detail drawer -->
+  <aside class="drawer" id="drawer" hidden>
+    <div class="drawer-scrim" data-close></div>
+    <div class="drawer-card" role="dialog" aria-modal="true">
+      <button class="drawer-close" data-close aria-label="Close">✕</button>
+      <div id="drawerContent"></div>
+    </div>
+  </aside>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

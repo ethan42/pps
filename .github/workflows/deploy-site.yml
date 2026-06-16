@@ -1,0 +1,58 @@
+name: Deploy curriculum site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Allow the workflow to publish to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# One concurrent deploy; cancel superseded runs
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install jsonschema
+
+      - name: Validate curriculum data
+        run: python scripts/validate.py
+
+      - name: Rebuild bundle from data/
+        run: python scripts/build.py
+
+      - name: Assemble static site
+        run: |
+          mkdir -p _site
+          cp site/index.html site/styles.css site/app.js _site/
+          cp dist/curriculum.json _site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

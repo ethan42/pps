@@ -2,3 +2,7 @@ venv/
 __pycache__/
 *.pyc
 .DS_Store
+
+# Pages build output and local-preview copy of the bundle
+_site/
+site/curriculum.json
