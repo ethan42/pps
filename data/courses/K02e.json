@@ -9,9 +9,8 @@
     "tutorial": 0,
     "lab": 2
   },
-  "ects": 2.0,
+  "ects": 2,
   "semester": [
     1
-  ],
-  "direction": null
+  ]
 }

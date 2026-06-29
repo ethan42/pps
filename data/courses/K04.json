@@ -3,15 +3,14 @@
   "title": {
     "el": "Εισαγωγή στον Προγραμματισμό"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 2
   },
-  "ects": 7.0,
+  "ects": 8,
   "semester": [
     1
-  ],
-  "direction": null
+  ]
 }

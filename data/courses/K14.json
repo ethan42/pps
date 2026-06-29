@@ -1,26 +1,22 @@
 {
   "code": "Κ14",
   "title": {
-    "el": "Αρχιτεκτονική Υπολογιστών Ι"
+    "el": "Αρχιτεκτονική Υπολογιστών"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 1
   },
-  "ects": 7.0,
+  "ects": 8,
   "semester": [
     2
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ02",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "instructors": [
-    "Δ. Γκιζόπουλος"
   ]
 }

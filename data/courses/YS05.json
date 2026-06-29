@@ -3,28 +3,20 @@
   "title": {
     "el": "Λογικός Προγραμματισμός"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     6
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ08",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S2": "basic"
-  },
-  "instructors": [
-    "Ι. Καράλη",
-    "Π. Σταματόπουλος"
   ]
 }

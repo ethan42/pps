@@ -1,0 +1,22 @@
+{
+  "code": "ΚΤΝ3",
+  "title": {
+    "el": "Βαθιά Μάθηση"
+  },
+  "category": "core",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    6
+  ],
+  "prerequisites": [
+    {
+      "code": "ΚΤΝ2",
+      "type": "required"
+    }
+  ]
+}

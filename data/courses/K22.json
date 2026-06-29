@@ -3,17 +3,16 @@
   "title": {
     "el": "Λειτουργικά Συστήματα"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 4,
     "tutorial": 0,
     "lab": 2
   },
-  "ects": 8.0,
+  "ects": 6,
   "semester": [
     5
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ08",
@@ -21,12 +20,7 @@
     },
     {
       "code": "Κ14",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "instructors": [
-    "Α. Δελής",
-    "Ε. Χατζηευθυμιάδης",
-    "Σ. Πασκαλής"
   ]
 }

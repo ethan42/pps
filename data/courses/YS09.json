@@ -3,25 +3,24 @@
   "title": {
     "el": "Τεχνολογία Λογισμικού"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     8
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ10",
       "type": "required"
+    },
+    {
+      "code": "ΥΣ04",
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S3": "basic"
-  },
-  "offered_this_year": false
+  ]
 }

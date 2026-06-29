@@ -3,27 +3,24 @@
   "title": {
     "el": "Ψηφιακές Επικοινωνίες"
   },
-  "category": "optional",
+  "category": "basic",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
-    8
+    6
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ21",
       "type": "required"
+    },
+    {
+      "code": "Κ20β",
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S5": "basic"
-  },
-  "instructors": [
-    "Ν. Πασσάς"
   ]
 }

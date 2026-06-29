@@ -1,0 +1,26 @@
+{
+  "code": "ΣΕ2",
+  "title": {
+    "el": "Ανάπτυξη Λογισμικού για Πληροφοριακά Συστήματα"
+  },
+  "category": "capstone",
+  "hours": {
+    "theory": 1,
+    "tutorial": 0,
+    "lab": 3
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ18",
+      "type": "required"
+    },
+    {
+      "code": "Κ29",
+      "type": "required"
+    }
+  ]
+}

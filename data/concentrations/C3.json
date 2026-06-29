@@ -1,0 +1,27 @@
+{
+  "id": "C3",
+  "name": {
+    "el": "Συστήματα, Αρχιτεκτονική και Υλικό",
+    "en": "Systems, Architecture and Hardware"
+  },
+  "basic_courses": [
+    "Κ30",
+    "ΘΠ04",
+    "ΥΣ03",
+    "ΣΕ3"
+  ],
+  "elective_courses": [
+    "Κ12",
+    "Κ19",
+    "ΥΣ16α",
+    "ΥΣ99",
+    "ΥΣ29",
+    "ΕΠ01",
+    "ΕΠ16",
+    "ΚΤΝ5"
+  ],
+  "award": {
+    "basic_required": 4,
+    "elective_required": 3
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "code": "ΚΤΝ6",
+  "title": {
+    "el": "Δορυφορικές Επικοινωνίες και Δίκτυα"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ21",
+      "type": "required"
+    },
+    {
+      "code": "ΥΣ18",
+      "type": "required"
+    },
+    {
+      "code": "ΕΠ04",
+      "type": "required"
+    }
+  ]
+}

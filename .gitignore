@@ -6,3 +6,6 @@ __pycache__/
 # Pages build output and local-preview copy of the bundle
 _site/
 site/curriculum.json
+
+# Confidential curriculum proposal — kept locally, never committed
+PPS-26-6-2026.pdf

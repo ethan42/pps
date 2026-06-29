@@ -1,29 +1,30 @@
 {
   "code": "ΕΠ13",
   "title": {
-    "el": "Ασύρματες Επικοινωνίες και Συστήματα (Ασύρματες Ζεύξεις)"
+    "el": "Ασύρματες Επικοινωνίες και Συστήματα"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 0,
     "lab": 1
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
-    5
+    7
   ],
-  "direction": null,
   "prerequisites": [
     {
-      "code": "Κ12",
+      "code": "Κ21",
+      "type": "required"
+    },
+    {
+      "code": "ΕΠ04",
+      "type": "required"
+    },
+    {
+      "code": "Κ20β",
       "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S5": "basic"
-  },
-  "instructors": [
-    "Γ. Αλεξανδρόπουλος"
   ]
 }

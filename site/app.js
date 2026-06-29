@@ -1,23 +1,21 @@
-/* DIT @ EKPA — Curriculum Atlas
+/* DIT @ EKPA — Curriculum Atlas (2026 PPS proposal)
    Renders dashboards from the prebuilt dist/curriculum.json bundle. */
 
 const CATEGORY = {
-  compulsory:         { el: "Υποχρεωτικά",            en: "Compulsory",          color: "#7c8cff" },
-  standalone_lab:     { el: "Προαιρ. Εργαστήρια",     en: "Standalone Labs",     color: "#38bdf8" },
-  direction_elective: { el: "Κατ’ επιλογή υποχρ.",    en: "Direction Electives", color: "#a78bfa" },
-  project:            { el: "Project",                en: "Project",             color: "#ff6ad5" },
-  general_education:  { el: "Γενικής Παιδείας",       en: "General Education",   color: "#43e7c9" },
-  optional:           { el: "Προαιρετικά",            en: "Optional",            color: "#f5a524" },
-  free:               { el: "Ελεύθερα",               en: "Free Electives",      color: "#94a3b8" },
-  thesis:             { el: "Πτυχιακή Εργασία",       en: "Thesis",              color: "#4ade80" },
-  internship:         { el: "Πρακτική Άσκηση",        en: "Internship",          color: "#a3e635" },
+  core:           { el: "Κορμού",             en: "Core",            color: "#7c8cff" },
+  basic:          { el: "Βασικά",             en: "Basic",           color: "#a78bfa" },
+  capstone:       { el: "Συνθετική Εργασία",  en: "Capstone",        color: "#ff6ad5" },
+  standalone_lab: { el: "Εργαστήρια",         en: "Standalone Labs", color: "#38bdf8" },
+  elective:       { el: "Επιλογής",           en: "Elective",        color: "#f5a524" },
+  thesis:         { el: "Πτυχιακή Εργασία",   en: "Thesis",          color: "#4ade80" },
+  internship:     { el: "Πρακτική Άσκηση",    en: "Internship",      color: "#a3e635" },
 };
-const SPEC_COLORS = ["#7c8cff", "#43e7c9", "#ff6ad5", "#f5a524", "#38bdf8", "#a3e635"];
+const CONC_COLORS = ["#7c8cff", "#43e7c9", "#ff6ad5", "#f5a524", "#38bdf8"];
 const ROMAN = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII"];
 
 let LANG = "el";
 let DATA = null;
-let GRAPH_CATS = new Set(["compulsory", "direction_elective", "project", "standalone_lab"]);
+let GRAPH_CATS = new Set(["core", "basic", "capstone", "standalone_lab"]);
 let GRAPH_LABEL = "code"; // "code" (default) | "name"
 const charts = {};
 
@@ -26,6 +24,16 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 const catLabel = (c) => (CATEGORY[c] ? CATEGORY[c][LANG] : c);
 const catColor = (c) => (CATEGORY[c] ? CATEGORY[c].color : "#888");
 const title = (course) => (course.title?.[LANG] || course.title?.el || course.code);
+
+// Concentration membership lives on the concentration objects; invert it per course.
+function concentrationsOf(code) {
+  const out = [];
+  (DATA.concentrations || []).forEach((c, i) => {
+    if ((c.basic_courses || []).includes(code)) out.push({ id: c.id, role: "basic", i, conc: c });
+    else if ((c.elective_courses || []).includes(code)) out.push({ id: c.id, role: "elective", i, conc: c });
+  });
+  return out;
+}
 
 /* ------------------------------------------------------------------ load */
 async function load() {
@@ -74,9 +82,9 @@ function renderAll() {
   renderStats();
   renderCategoryChart();
   renderSemesterChart();
-  renderSpecChart();
+  renderConcentrationChart();
   renderHoursChart();
-  renderDirectionSplit();
+  renderProgramBreakdown();
   renderGraphFilters();
   renderGraph();
   renderExplorerFilters();
@@ -92,34 +100,32 @@ function renderHero() {
   $("#deptTitle").textContent = p.department?.[LANG] || p.department?.el;
   $("#instTitle").textContent = `${p.institution?.[LANG] || p.institution?.el} · ${p.degree_title?.[LANG] || p.degree_title?.el}`;
   document.documentElement.lang = LANG;
-  const dirs = (p.directions || []).map((d) => d.name?.[LANG] || d.name?.el).join(" · ");
+  const g = p.graduation_rules || {};
   $("#heroMeta").innerHTML = [
+    `<span class="chip"><b>${g.total_ects ?? "—"}</b> ECTS ${LANG === "el" ? "για πτυχίο" : "to graduate"}</span>`,
     `<span class="chip"><b>${DATA.courses.length}</b> ${LANG === "el" ? "μαθήματα" : "courses"}</span>`,
     `<span class="chip"><b>8</b> ${LANG === "el" ? "εξάμηνα" : "semesters"}</span>`,
-    `<span class="chip"><b>${p.directions.length}</b> ${LANG === "el" ? "κατευθύνσεις" : "directions"}: ${dirs}</span>`,
-    `<span class="chip"><b>${DATA.specializations.length}</b> ${LANG === "el" ? "ειδικεύσεις" : "specializations"}</span>`,
+    `<span class="chip"><b>${(DATA.concentrations || []).length}</b> ${LANG === "el" ? "ειδικεύσεις" : "concentrations"}</span>`,
   ].join("");
 }
 
 /* ------------------------------------------------------------------ stats */
 function renderStats() {
   const c = DATA.courses;
-  const dept = c.filter((x) => x.category !== "free");
+  const g = DATA.program.graduation_rules || {};
   const sum = (arr) => arr.reduce((a, x) => a + (x.ects || 0), 0);
   const byCat = (cat) => c.filter((x) => x.category === cat);
-  const offered = c.filter((x) => x.offered_this_year !== false).length;
   const instructors = new Set(c.flatMap((x) => x.instructors || [])).size;
-  const withPre = c.filter((x) => (x.prerequisites || []).length).length;
 
   const cards = [
-    { num: c.length, label: LANG === "el" ? "Μαθήματα συνολικά" : "Total courses", sub: `${byCat("free").length} ${LANG === "el" ? "ελεύθερα" : "free"}`, bar: "#7c8cff" },
-    { num: Math.round(sum(dept)), label: LANG === "el" ? "ECTS στο πρόγραμμα" : "ECTS on offer", sub: LANG === "el" ? "εκτός ελευθέρων" : "excl. free electives", bar: "#43e7c9" },
-    { num: byCat("compulsory").length, label: LANG === "el" ? "Υποχρεωτικά" : "Compulsory", sub: `${Math.round(sum(byCat("compulsory")))} ECTS`, bar: catColor("compulsory") },
-    { num: byCat("optional").length, label: LANG === "el" ? "Προαιρετικά" : "Optional courses", sub: `${byCat("direction_elective").length} ${LANG === "el" ? "κατ’ επιλογή υποχρ." : "direction electives"}`, bar: catColor("optional") },
-    { num: `${offered}`, label: LANG === "el" ? "Προσφέρονται φέτος" : "Offered this year", sub: `${c.length - offered} ${LANG === "el" ? "δεν προσφέρονται" : "not offered"}`, bar: "#a3e635" },
-    { num: withPre, label: LANG === "el" ? "Με προαπαιτούμενα" : "With prerequisites", sub: `${c.flatMap((x) => x.prerequisites || []).length} ${LANG === "el" ? "σχέσεις" : "links"}`, bar: "#ff6ad5" },
-    { num: instructors, label: LANG === "el" ? "Διδάσκοντες" : "Instructors", sub: LANG === "el" ? "στο ωρολόγιο πρόγραμμα" : "in the schedule", bar: "#38bdf8" },
-    { num: DATA.specializations.length, label: LANG === "el" ? "Ειδικεύσεις" : "Specializations", sub: LANG === "el" ? "σε 2 κατευθύνσεις" : "across 2 directions", bar: "#a78bfa" },
+    { num: g.total_ects ?? Math.round(sum(c)), label: LANG === "el" ? "ECTS για πτυχίο" : "ECTS to graduate", sub: LANG === "el" ? "ελάχιστο σύνολο" : "minimum total", bar: "#43e7c9" },
+    { num: byCat("core").length, label: LANG === "el" ? "Μαθήματα Κορμού" : "Core courses", sub: `${Math.round(sum(byCat("core")))} ECTS`, bar: catColor("core") },
+    { num: byCat("basic").length, label: LANG === "el" ? "Βασικά μαθήματα" : "Basic courses", sub: `${LANG === "el" ? "επιλέγονται" : "choose"} ${g.basic?.choose ?? "—"}`, bar: catColor("basic") },
+    { num: byCat("capstone").length, label: LANG === "el" ? "Συνθετικές Εργασίες" : "Capstone projects", sub: `${LANG === "el" ? "επιλέγεται" : "choose"} ${g.capstone?.choose ?? 1}`, bar: catColor("capstone") },
+    { num: byCat("elective").length, label: LANG === "el" ? "Μαθήματα επιλογής" : "Elective courses", sub: `+${byCat("standalone_lab").length} ${LANG === "el" ? "εργαστήρια" : "labs"}`, bar: catColor("elective") },
+    { num: (DATA.concentrations || []).length, label: LANG === "el" ? "Ειδικεύσεις" : "Concentrations", sub: `${LANG === "el" ? "κατοχύρωση ≥" : "claim ≥"}${g.concentrations?.required ?? 1}`, bar: "#a78bfa" },
+    { num: c.flatMap((x) => x.prerequisites || []).length, label: LANG === "el" ? "Προαπαιτούμενα" : "Prerequisite links", sub: `${c.filter((x) => (x.prerequisites || []).length).length} ${LANG === "el" ? "μαθήματα" : "courses"}`, bar: "#ff6ad5" },
+    { num: instructors || "—", label: LANG === "el" ? "Διδάσκοντες" : "Instructors", sub: LANG === "el" ? "όπου είναι γνωστοί" : "where known", bar: "#38bdf8" },
   ];
   $("#statCards").innerHTML = cards.map((c) =>
     `<div class="stat" style="--bar:${c.bar}"><div class="num">${c.num}</div><div class="label">${c.label}</div><div class="sub">${c.sub}</div></div>`
@@ -149,7 +155,7 @@ function renderCategoryChart() {
 
 /* --------------------------------------------------------- semester chart */
 function renderSemesterChart() {
-  const cats = ["compulsory", "standalone_lab", "direction_elective", "project", "general_education", "optional"];
+  const cats = ["core", "basic", "capstone", "standalone_lab", "elective"];
   const datasets = cats.map((cat) => ({
     label: catLabel(cat),
     backgroundColor: catColor(cat),
@@ -168,33 +174,26 @@ function renderSemesterChart() {
   });
 }
 
-/* ----------------------------------------------------------- spec chart */
-function renderSpecChart() {
-  const specs = DATA.specializations;
-  const mand = [], basic = [];
-  specs.forEach((s) => {
-    let m = 0, b = 0;
-    DATA.courses.forEach((c) => {
-      const r = c.specialization_roles?.[s.id];
-      if (r === "mandatory") m++; else if (r === "basic") b++;
-    });
-    mand.push(m); basic.push(b);
-  });
-  charts.spec?.destroy();
-  charts.spec = new Chart($("#specChart"), {
+/* ------------------------------------------------- concentration chart */
+function renderConcentrationChart() {
+  const concs = DATA.concentrations || [];
+  const basic = concs.map((s) => (s.basic_courses || []).length);
+  const elect = concs.map((s) => (s.elective_courses || []).length);
+  charts.conc?.destroy();
+  charts.conc = new Chart($("#concChart"), {
     type: "bar",
     data: {
-      labels: specs.map((s) => s.id),
+      labels: concs.map((s) => s.id),
       datasets: [
-        { label: LANG === "el" ? "Υποχρεωτικά (Υ)" : "Mandatory (Υ)", data: mand, backgroundColor: specs.map((_, i) => SPEC_COLORS[i]), borderRadius: 4 },
-        { label: LANG === "el" ? "Βασικά (Β)" : "Basic (Β)", data: basic, backgroundColor: specs.map((_, i) => SPEC_COLORS[i] + "66"), borderRadius: 4 },
+        { label: LANG === "el" ? "Βασικά (όλα)" : "Basic (all)", data: basic, backgroundColor: concs.map((_, i) => CONC_COLORS[i]), borderRadius: 4 },
+        { label: LANG === "el" ? "Επιλογής (διαθέσιμα)" : "Electives (available)", data: elect, backgroundColor: concs.map((_, i) => CONC_COLORS[i] + "66"), borderRadius: 4 },
       ],
     },
     options: {
       scales: { x: { stacked: true, grid: { display: false } }, y: { stacked: true, ticks: { precision: 0 } } },
       plugins: {
         legend: { position: "bottom", labels: { boxWidth: 10, padding: 12, font: { size: 11 } } },
-        tooltip: { callbacks: { title: (it) => specs[it[0].dataIndex].name?.[LANG] || specs[it[0].dataIndex].name?.el } },
+        tooltip: { callbacks: { title: (it) => concs[it[0].dataIndex].name?.[LANG] || concs[it[0].dataIndex].name?.el } },
       },
     },
   });
@@ -215,12 +214,18 @@ function renderHoursChart() {
   });
 }
 
-function renderDirectionSplit() {
-  const dirs = DATA.program.directions;
-  $("#directionSplit").innerHTML = dirs.map((d) => {
-    const n = DATA.courses.filter((c) => c.direction === d.id).length;
-    return `<div class="d"><div class="k">${d.name?.[LANG] || d.name?.el}</div><div class="v">${n}</div><div class="k">${LANG === "el" ? "μαθήματα κατεύθυνσης" : "direction courses"}</div></div>`;
-  }).join("");
+/* ----------------------------------------- program structure breakdown */
+function renderProgramBreakdown() {
+  const g = DATA.program.graduation_rules || {};
+  const items = [
+    { k: LANG === "el" ? "Κορμού" : "Core", v: `${g.core?.ects ?? "—"} ECTS`, s: `${g.core?.choose ?? "—"} ${LANG === "el" ? "μαθ." : "courses"}` },
+    { k: LANG === "el" ? "Βασικά" : "Basic", v: `${g.basic?.ects ?? "—"} ECTS`, s: `${g.basic?.choose ?? "—"}/${g.basic?.offered ?? "—"}` },
+    { k: "Capstone", v: `${g.capstone?.ects ?? "—"} ECTS`, s: `${g.capstone?.choose ?? 1}/${g.capstone?.offered ?? "—"}` },
+    { k: LANG === "el" ? "Πτυχ./Πρακτ." : "Thesis/Intern.", v: `${g.thesis_or_internship_ects ?? "—"} ECTS`, s: LANG === "el" ? "ή/ή" : "either/or" },
+  ];
+  $("#programBreakdown").innerHTML = items.map((d) =>
+    `<div class="d"><div class="k">${d.k}</div><div class="v">${d.v}</div><div class="k">${d.s}</div></div>`
+  ).join("");
 }
 
 /* ----------------------------------------------------------- prereq graph */
@@ -251,7 +256,7 @@ function wrapLabel(text, maxChars, maxLines) {
 }
 
 function renderGraphFilters() {
-  const cats = ["compulsory", "direction_elective", "project", "standalone_lab", "optional", "general_education"];
+  const cats = ["core", "basic", "capstone", "standalone_lab", "elective"];
   $("#graphFilters").innerHTML = cats.map((c) =>
     `<button data-gcat="${c}" class="${GRAPH_CATS.has(c) ? "on" : ""}" style="${GRAPH_CATS.has(c) ? `background:${catColor(c)};border-color:${catColor(c)}` : ""}">${catLabel(c)}</button>`
   ).join("");
@@ -368,7 +373,7 @@ function renderGraph() {
 }
 
 /* ----------------------------------------------------------- explorer */
-let filterState = { cats: new Set(), sem: null, dir: null, spec: null, offered: false, q: "" };
+let filterState = { cats: new Set(), sem: null, conc: null, offered: false, q: "" };
 let sortState = { key: "code", dir: 1 };
 
 function renderExplorerFilters() {
@@ -379,7 +384,7 @@ function renderExplorerFilters() {
   parts.push(`<span style="width:10px"></span>`);
   for (let s = 1; s <= 8; s++) parts.push(`<button data-sem="${s}" class="${filterState.sem === s ? "on" : ""}" style="${filterState.sem === s ? "background:#43e7c9;border-color:#43e7c9;color:#0a0e1a" : ""}">${LANG === "el" ? "Εξ." : "S"}${s}</button>`);
   parts.push(`<span style="width:10px"></span>`);
-  DATA.specializations.forEach((s, i) => parts.push(`<button data-spec="${s.id}" class="${filterState.spec === s.id ? "on" : ""}" style="${filterState.spec === s.id ? `background:${SPEC_COLORS[i]};border-color:${SPEC_COLORS[i]};color:#0a0e1a` : ""}">${s.id}</button>`));
+  (DATA.concentrations || []).forEach((s, i) => parts.push(`<button data-conc="${s.id}" class="${filterState.conc === s.id ? "on" : ""}" style="${filterState.conc === s.id ? `background:${CONC_COLORS[i]};border-color:${CONC_COLORS[i]};color:#0a0e1a` : ""}" title="${s.name?.[LANG] || s.name?.el}">${s.id}</button>`));
   parts.push(`<button data-offered class="${filterState.offered ? "on" : ""}" style="${filterState.offered ? "background:#a3e635;border-color:#a3e635;color:#0a0e1a" : ""}">${LANG === "el" ? "Μόνο φετινά" : "Offered only"}</button>`);
   $("#explorerFilters").innerHTML = parts.join("");
 
@@ -387,7 +392,7 @@ function renderExplorerFilters() {
     if (b.hasAttribute("data-allcat")) filterState.cats.clear();
     else if (b.dataset.cat) { const c = b.dataset.cat; filterState.cats.has(c) ? filterState.cats.delete(c) : filterState.cats.add(c); }
     else if (b.dataset.sem) filterState.sem = filterState.sem === +b.dataset.sem ? null : +b.dataset.sem;
-    else if (b.dataset.spec) filterState.spec = filterState.spec === b.dataset.spec ? null : b.dataset.spec;
+    else if (b.dataset.conc) filterState.conc = filterState.conc === b.dataset.conc ? null : b.dataset.conc;
     else if (b.hasAttribute("data-offered")) filterState.offered = !filterState.offered;
     renderExplorerFilters(); renderTable();
   });
@@ -398,7 +403,7 @@ function filteredCourses() {
   return DATA.courses.filter((c) => {
     if (filterState.cats.size && !filterState.cats.has(c.category)) return false;
     if (filterState.sem && !(c.semester || []).includes(filterState.sem)) return false;
-    if (filterState.spec && !c.specialization_roles?.[filterState.spec]) return false;
+    if (filterState.conc && !concentrationsOf(c.code).some((r) => r.id === filterState.conc)) return false;
     if (filterState.offered && c.offered_this_year === false) return false;
     if (q) {
       const hay = `${c.code} ${c.title?.el} ${c.title?.en || ""} ${(c.instructors || []).join(" ")}`.toLowerCase();
@@ -413,7 +418,7 @@ function sortCourses(list) {
   const val = (c) => ({
     code: c.code, title: title(c), category: catLabel(c.category),
     semester: Math.min(...(c.semester || [99])), ects: c.ects || 0,
-    prereq: (c.prerequisites || []).length, spec: Object.keys(c.specialization_roles || {}).join(""),
+    prereq: (c.prerequisites || []).length, conc: concentrationsOf(c.code).map((r) => r.id).join(""),
   }[k]);
   return [...list].sort((a, b) => {
     const va = val(a), vb = val(b);
@@ -425,10 +430,9 @@ function renderTable() {
   const list = sortCourses(filteredCourses());
   $("#explorerCount").textContent = `· ${list.length}`;
   $("#courseTableBody").innerHTML = list.map((c) => {
-    const specPills = Object.entries(c.specialization_roles || {}).map(([s, r]) => {
-      const i = DATA.specializations.findIndex((x) => x.id === s);
-      return `<span class="spec-pill ${r === "basic" ? "b" : ""}" style="background:${SPEC_COLORS[i]};color:#0a0e1a" title="${s} ${r}">${s.slice(1)}</span>`;
-    }).join("");
+    const concPills = concentrationsOf(c.code).map(({ id, role, i }) =>
+      `<span class="spec-pill ${role === "elective" ? "b" : ""}" style="background:${CONC_COLORS[i]};color:#0a0e1a" title="${id} ${role}">${id.slice(1)}</span>`
+    ).join("");
     return `<tr data-code="${c.code}" class="${c.offered_this_year === false ? "not-offered" : ""}">
       <td class="code-cell">${c.code}</td>
       <td>${title(c)}${c.offered_this_year === false ? ` <span class="muted small">(${LANG === "el" ? "δεν προσφέρεται" : "not offered"})</span>` : ""}</td>
@@ -436,7 +440,7 @@ function renderTable() {
       <td class="num">${(c.semester || []).join("/") || "—"}</td>
       <td class="num">${c.ects ?? "—"}</td>
       <td class="num">${(c.prerequisites || []).length || ""}</td>
-      <td><span class="spec-pills">${specPills}</span></td>
+      <td><span class="spec-pills">${concPills}</span></td>
     </tr>`;
   }).join("");
   $$("#courseTableBody tr").forEach((tr) => tr.onclick = () => openDrawer(tr.dataset.code));
@@ -455,6 +459,9 @@ function renderTopInstructors() {
   DATA.courses.forEach((c) => (c.instructors || []).forEach((n) => (counts[n] = (counts[n] || 0) + 1)));
   const top = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 12);
   const max = top[0]?.[1] || 1;
+  const panel = $("#topInstructorsPanel");
+  if (!top.length) { if (panel) panel.hidden = true; return; }
+  if (panel) panel.hidden = false;
   $("#topInstructors").innerHTML = top.map(([n, v]) =>
     `<div class="row"><div>${n}</div><div class="track"><div class="fill" style="width:${(v / max) * 100}%"></div></div><div class="cnt">${v}</div></div>`
   ).join("");
@@ -468,11 +475,6 @@ function wireDrawer() {
 function closeDrawer() { $("#drawer").hidden = true; }
 
 const T = (el, en) => (LANG === "el" ? el : en);
-const TERM = {
-  winter: () => T("Χειμερινό", "Winter"),
-  spring: () => T("Εαρινό", "Spring"),
-  annual: () => T("Ετήσιο", "Annual"),
-};
 
 function openDrawer(code) {
   const c = DATA.courses.find((x) => x.code === code);
@@ -482,8 +484,7 @@ function openDrawer(code) {
     const t = DATA.courses.find((x) => x.code === cc);
     return `<span class="d-chip ${extra}" data-jump="${cc}">${cc}${t ? ` <small>${title(t)}</small>` : ""}</span>`;
   };
-  const roleName = (r) => r === "mandatory" ? T("Υποχρεωτικό (Υ)", "Mandatory (Υ)") : T("Βασικό (Β)", "Basic (Β)");
-  const dirName = (id) => { const d = DATA.program.directions.find((x) => x.id === id); return d ? `${id} · ${d.name?.[LANG] || d.name?.el}` : id; };
+  const roleName = (r) => r === "basic" ? T("Βασικό", "Basic") : T("Επιλογής", "Elective");
   const enTitle = c.title?.en && c.title.en !== c.title?.el ? c.title.en : null;
   const weekly = c.hours ? c.hours.theory + c.hours.tutorial + c.hours.lab : null;
   const cell = (k, v) => `<div class="cell"><div class="k">${k}</div><div class="v">${v}</div></div>`;
@@ -493,27 +494,21 @@ function openDrawer(code) {
   if ((c.semester || []).length) cells.push(cell(T("Εξάμηνο", "Semester"), c.semester.map((s) => `${s}${T("ο", "")}`).join(" / ")));
   if (c.hours) cells.push(cell(T("Ώρες Θ/Φ/Ε", "Hours Th/Tut/Lab"), `${c.hours.theory}/${c.hours.tutorial}/${c.hours.lab}`));
   if (weekly != null) cells.push(cell(T("Ώρες/εβδομάδα", "Weekly hours"), weekly));
-  if (c.direction) cells.push(cell(T("Κατεύθυνση", "Direction"), dirName(c.direction)));
-  if (c.term) cells.push(cell(T("Περίοδος", "Term"), (TERM[c.term] || (() => c.term))()));
   cells.push(cell(T("Προσφέρεται φέτος", "Offered this year"), c.offered_this_year === false ? T("Όχι", "No") : T("Ναι", "Yes")));
 
   const sections = [];
   if ((c.prerequisites || []).length)
     sections.push(`<div class="d-sec"><h4>${T("Προαπαιτούμενα", "Prerequisites")}</h4>
-      <div class="d-chiplist">${c.prerequisites.map((p) => chip(p.code, p.type === "recommended" ? "rec" : "req")).join("")}</div>
-      <p class="muted small" style="margin:8px 0 0">${T("Συνεχόμενο = υποχρεωτικό, διακεκομμένο = συνιστώμενο", "Solid = required, dashed = recommended")}</p></div>`);
+      <div class="d-chiplist">${c.prerequisites.map((p) => chip(p.code, p.type === "recommended" ? "rec" : "req")).join("")}</div></div>`);
   if (dependents.length)
     sections.push(`<div class="d-sec"><h4>${T("Απαιτείται για", "Required by")}</h4><div class="d-chiplist">${dependents.map((d) => chip(d.code)).join("")}</div></div>`);
-  if (c.specialization_roles && Object.keys(c.specialization_roles).length)
-    sections.push(`<div class="d-sec"><h4>${T("Ειδικεύσεις", "Specializations")}</h4><div class="d-chiplist">${Object.entries(c.specialization_roles).map(([s, r]) => {
-      const sp = DATA.specializations.find((x) => x.id === s);
-      const i = DATA.specializations.findIndex((x) => x.id === s);
-      return `<span class="d-chip"><span class="spec-pill ${r === "basic" ? "b" : ""}" style="background:${SPEC_COLORS[i]};color:#0a0e1a">${s.slice(1)}</span> ${sp?.name?.[LANG] || sp?.name?.el} <small>${roleName(r)}</small></span>`;
-    }).join("")}</div></div>`);
+  const concRoles = concentrationsOf(c.code);
+  if (concRoles.length)
+    sections.push(`<div class="d-sec"><h4>${T("Ειδικεύσεις", "Concentrations")}</h4><div class="d-chiplist">${concRoles.map(({ id, role, i, conc }) =>
+      `<span class="d-chip"><span class="spec-pill ${role === "elective" ? "b" : ""}" style="background:${CONC_COLORS[i]};color:#0a0e1a">${id.slice(1)}</span> ${conc.name?.[LANG] || conc.name?.el} <small>${roleName(role)}</small></span>`
+    ).join("")}</div></div>`);
   if ((c.instructors || []).length)
     sections.push(`<div class="d-sec"><h4>${T("Διδάσκοντες", "Instructors")} <span class="muted">· ${c.instructors.length}</span></h4><div class="d-people">${c.instructors.join(" · ")}</div></div>`);
-  if (c.department)
-    sections.push(`<div class="d-sec"><h4>${T("Τμήμα", "Department")}</h4><div class="d-people">${c.department?.[LANG] || c.department?.el}</div></div>`);
   if (c.description_url)
     sections.push(`<div class="d-sec"><h4>${T("Αναλυτική περιγραφή", "Full description")}</h4><a class="d-link" href="${c.description_url}" target="_blank" rel="noopener">${T("Άνοιγμα συνδέσμου", "Open link")} ↗</a></div>`);
   if (c.notes)

@@ -1,0 +1,29 @@
+{
+  "id": "C2",
+  "name": {
+    "el": "Λογισμικό και Ασφάλεια Υπολογιστικών Συστημάτων",
+    "en": "Software and Computer Systems Security"
+  },
+  "basic_courses": [
+    "Κ31",
+    "ΥΣ13",
+    "Κ18",
+    "ΣΕ2"
+  ],
+  "elective_courses": [
+    "ΥΣ08",
+    "ΥΣ05",
+    "ΘΠ01",
+    "ΥΣ14",
+    "ΥΣ04",
+    "ΥΣ09",
+    "ΥΣ99",
+    "ΥΣ16α",
+    "Κ30",
+    "ΘΠ02"
+  ],
+  "award": {
+    "basic_required": 4,
+    "elective_required": 3
+  }
+}

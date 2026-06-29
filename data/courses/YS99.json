@@ -1,0 +1,22 @@
+{
+  "code": "ΥΣ99",
+  "title": {
+    "el": "Αξιόπιστα Συστήματα Λογισμικού"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 4,
+    "tutorial": 0,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    8
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ22",
+      "type": "required"
+    }
+  ]
+}

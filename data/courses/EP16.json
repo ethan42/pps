@@ -1,30 +1,26 @@
 {
   "code": "ΕΠ16",
   "title": {
-    "el": "Οπτικές Επικοινωνίες και Οπτικά Δίκτυα"
+    "el": "Οπτικές Επικοινωνίες και Συστήματα"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     7
   ],
-  "direction": null,
   "prerequisites": [
     {
-      "code": "Κ12",
+      "code": "Κ21",
+      "type": "required"
+    },
+    {
+      "code": "Κ16",
       "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S4": "basic",
-    "S5": "basic"
-  },
-  "instructors": [
-    "Γ. Κανέλλος"
   ]
 }

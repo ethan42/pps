@@ -1,30 +1,26 @@
 {
   "code": "ΕΠ20",
   "title": {
-    "el": "Τηλεπικοινωνιακά Δίκτυα"
+    "el": "Τεχνολογίες Ασύρματων Δικτύων"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
-    "tutorial": 0,
-    "lab": 1
+    "tutorial": 1,
+    "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
-    5
+    7
   ],
-  "direction": null,
   "prerequisites": [
+    {
+      "code": "Κ21",
+      "type": "required"
+    },
     {
       "code": "Κ16",
       "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S5": "basic"
-  },
-  "instructors": [
-    "Δ. Βαρουτάς",
-    "Δ.Κατσιάνης"
   ]
 }

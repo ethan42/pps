@@ -1,0 +1,26 @@
+{
+  "code": "ΣΕ3",
+  "title": {
+    "el": "Ανάπτυξη Λογισμικού για Αρχιτεκτονικές Υψηλών Επιδόσεων"
+  },
+  "category": "capstone",
+  "hours": {
+    "theory": 1,
+    "tutorial": 0,
+    "lab": 3
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ14",
+      "type": "required"
+    },
+    {
+      "code": "ΥΣ03",
+      "type": "required"
+    }
+  ]
+}

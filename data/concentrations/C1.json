@@ -1,0 +1,32 @@
+{
+  "id": "C1",
+  "name": {
+    "el": "Θεμελιώσεις Επιστήμης Υπολογιστών και Μηχανικής Μάθησης",
+    "en": "Foundations of Computer Science and Machine Learning"
+  },
+  "basic_courses": [
+    "Κ25",
+    "Κ20α",
+    "ΘΠ22",
+    "ΣΕ1"
+  ],
+  "elective_courses": [
+    "ΘΠ01",
+    "ΘΠ05",
+    "ΘΠ09",
+    "ΘΠ12",
+    "ΘΠ11",
+    "ΘΠ20",
+    "ΘΠ24",
+    "ΘΠ10",
+    "ΘΠ19",
+    "ΘΠ21",
+    "ΘΠ23",
+    "ΘΠ02",
+    "Κ15"
+  ],
+  "award": {
+    "basic_required": 4,
+    "elective_required": 3
+  }
+}

@@ -3,15 +3,14 @@
   "title": {
     "el": "Πιθανότητες και Στατιστική"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 7,
   "semester": [
     3
-  ],
-  "direction": null
+  ]
 }

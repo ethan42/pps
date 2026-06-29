@@ -1,0 +1,25 @@
+{
+  "id": "C5",
+  "name": {
+    "el": "Τεχνητή Νοημοσύνη",
+    "en": "Artificial Intelligence"
+  },
+  "basic_courses": [
+    "ΥΣ19",
+    "ΕΠ22α",
+    "ΚΤΝ11",
+    "ΣΕ5"
+  ],
+  "elective_courses": [
+    "ΚΤΝ4",
+    "ΘΠ22",
+    "ΥΣ11",
+    "ΕΠ23",
+    "ΘΠ23",
+    "ΚΤΝ10"
+  ],
+  "award": {
+    "basic_required": 4,
+    "elective_required": 3
+  }
+}

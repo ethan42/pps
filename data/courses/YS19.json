@@ -1,27 +1,26 @@
 {
   "code": "ΥΣ19",
   "title": {
-    "el": "Τεχνητή Νοημοσύνη ΙΙ"
+    "el": "Μεγάλα Γλωσσικά Μοντέλα και Επεξεργασία Φυσικής Γλώσσας"
   },
-  "category": "optional",
+  "category": "basic",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     6
   ],
-  "direction": null,
   "prerequisites": [
     {
-      "code": "ΥΣ02",
+      "code": "ΚΤΝ1",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ2",
       "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S2": "basic"
-  },
-  "offered_this_year": false
+  ]
 }

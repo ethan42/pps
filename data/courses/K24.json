@@ -3,17 +3,16 @@
   "title": {
     "el": "Προγραμματισμός Συστήματος"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 4,
-    "tutorial": 0,
-    "lab": 1
+    "tutorial": 1,
+    "lab": 0
   },
-  "ects": 8.0,
+  "ects": 6,
   "semester": [
     6
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ08",
@@ -21,12 +20,7 @@
     },
     {
       "code": "Κ14",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "instructors": [
-    "Ι. Ρουσσοπούλου",
-    "Α. Ντούλας",
-    "Ν. Περδικοπάνης"
   ]
 }

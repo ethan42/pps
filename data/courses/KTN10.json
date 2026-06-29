@@ -1,0 +1,16 @@
+{
+  "code": "ΚΤΝ10",
+  "title": {
+    "el": "Γραμμικός και Μη Γραμμικός Έλεγχος"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    8
+  ]
+}

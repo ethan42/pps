@@ -15,7 +15,7 @@
   <header class="hero">
     <div class="hero-inner">
       <div class="hero-top">
-        <div class="badge" id="yearBadge">2025–2026</div>
+        <div class="badge" id="yearBadge">2026–2027</div>
         <div class="lang-toggle" role="group" aria-label="Language">
           <button data-lang="el" class="active">ΕΛ</button>
           <button data-lang="en">EN</button>
@@ -45,15 +45,15 @@
 
     <section class="grid-2">
       <article class="panel">
-        <h2 class="panel-title">Specialization depth</h2>
-        <p class="muted small">Mandatory (Υ) and basic (Β) courses available to claim each specialization.</p>
-        <div class="chart-wrap"><canvas id="specChart"></canvas></div>
+        <h2 class="panel-title">Concentration depth</h2>
+        <p class="muted small">Basic courses (all required) and the elective pool available to claim each concentration.</p>
+        <div class="chart-wrap"><canvas id="concChart"></canvas></div>
       </article>
       <article class="panel">
         <h2 class="panel-title">Teaching hours mix</h2>
         <p class="muted small">Weekly theory / tutorial / lab hours across the catalogue.</p>
         <div class="chart-wrap"><canvas id="hoursChart"></canvas></div>
-        <div id="directionSplit" class="dirsplit"></div>
+        <div id="programBreakdown" class="dirsplit"></div>
       </article>
     </section>
 
@@ -92,7 +92,7 @@
               <th data-sort="semester" class="num">Sem</th>
               <th data-sort="ects" class="num">ECTS</th>
               <th data-sort="prereq" class="num">Pre</th>
-              <th data-sort="spec">Spec</th>
+              <th data-sort="conc">Conc</th>
             </tr>
           </thead>
           <tbody id="courseTableBody"></tbody>

@@ -1,23 +1,26 @@
 {
   "code": "Κ20β",
   "title": {
-    "el": "Εφαρμοσμένα Μαθηματικά"
+    "el": "Συνεχή Μαθηματικά: Διανυσματικές Συναρτήσεις και Βελτιστοποίηση"
   },
-  "category": "optional",
+  "category": "core",
   "hours": {
-    "theory": 3,
-    "tutorial": 1,
+    "theory": 4,
+    "tutorial": 2,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 7,
   "semester": [
-    2
+    3
   ],
-  "direction": null,
-  "specialization_roles": {
-    "S6": "basic"
-  },
-  "instructors": [
-    "Μ. Λουκά"
+  "prerequisites": [
+    {
+      "code": "Κ01",
+      "type": "required"
+    },
+    {
+      "code": "Κ03",
+      "type": "required"
+    }
   ]
 }

@@ -1,29 +1,22 @@
 {
   "code": "Κ35",
   "title": {
-    "el": "Θεωρία Πληροφορίας (Θεωρία Πληροφορίας και Κωδίκων)"
+    "el": "Θεωρία Πληροφορίας"
   },
-  "category": "direction_elective",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
-    6
+    4
   ],
-  "direction": "CET",
   "prerequisites": [
     {
       "code": "Κ13",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S6": "mandatory"
-  },
-  "instructors": [
-    "Γ. Αλεξανδρόπουλος"
   ]
 }

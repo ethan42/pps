@@ -2,27 +2,25 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dit.uoa.gr/curriculum/schema/course.schema.json",
   "title": "Course",
-  "description": "A single course in the DIT@EKPA undergraduate programme. One JSON file per course, keyed by its code.",
+  "description": "A single course in the DIT@EKPA undergraduate programme (2026 PPS proposal). One JSON file per course, keyed by its code.",
   "type": "object",
   "additionalProperties": false,
   "required": ["code", "title", "category", "ects"],
   "properties": {
     "code": {
       "$ref": "#/$defs/courseCode",
-      "description": "Natural key, e.g. Κ17, Κ23γ, ΘΠ01, ΕΠ13, ΓΠ07."
+      "description": "Natural key, e.g. Κ17, Κ20β, ΘΠ01, ΚΤΝ1, ΣΕ3, ΥΣ16α."
     },
     "title": { "$ref": "#/$defs/bilingual" },
     "category": {
       "type": "string",
-      "description": "Curriculum bucket the course belongs to.",
+      "description": "Curriculum bucket the course belongs to under the 2026 PPS.",
       "enum": [
-        "compulsory",
+        "core",
+        "basic",
+        "capstone",
         "standalone_lab",
-        "direction_elective",
-        "project",
-        "general_education",
-        "optional",
-        "free",
+        "elective",
         "thesis",
         "internship"
       ]
@@ -42,31 +40,18 @@
       "type": "number",
       "exclusiveMinimum": 0,
       "maximum": 30,
-      "description": "ECTS credits. Fractional values allowed (e.g. free courses from other departments)."
+      "description": "ECTS credits."
     },
     "semester": {
       "type": "array",
-      "description": "Semester(s) in which the course is offered (1-8). Most courses have one; a few list two. Absent for free electives, which are not tied to a PPS semester.",
+      "description": "Semester(s) in which the course is offered (1-8). Most courses have one; a few list two.",
       "minItems": 1,
       "uniqueItems": true,
       "items": { "type": "integer", "minimum": 1, "maximum": 8 }
     },
-    "term": {
-      "type": "string",
-      "description": "Offering term, used for free electives (ΕΛ) which are listed per term.",
-      "enum": ["winter", "spring", "annual"]
-    },
-    "department": {
-      "$ref": "#/$defs/bilingual",
-      "description": "For free electives: the EKPA department that offers the course."
-    },
-    "direction": {
-      "description": "CS or CET. Set for direction electives (ΕΥ) and projects; null otherwise.",
-      "enum": ["CS", "CET", null]
-    },
     "prerequisites": {
       "type": "array",
-      "description": "Prerequisite courses. type=required (bold in the PDF) vs recommended (italic).",
+      "description": "Prerequisite courses (Προαπαιτούμενα), as listed in the PPS course tables.",
       "items": {
         "type": "object",
         "additionalProperties": false,
@@ -77,27 +62,14 @@
         }
       }
     },
-    "specialization_roles": {
-      "type": "object",
-      "description": "Per-specialization role. mandatory (Υ) = required to claim that specialization; basic (Β) = core elective of it. Absent key = not part of that specialization.",
-      "additionalProperties": false,
-      "properties": {
-        "S1": { "$ref": "#/$defs/specRole" },
-        "S2": { "$ref": "#/$defs/specRole" },
-        "S3": { "$ref": "#/$defs/specRole" },
-        "S4": { "$ref": "#/$defs/specRole" },
-        "S5": { "$ref": "#/$defs/specRole" },
-        "S6": { "$ref": "#/$defs/specRole" }
-      }
-    },
     "offered_this_year": {
       "type": "boolean",
-      "description": "false when the title carries (ΔΠ) = not offered this academic year. Defaults to true.",
+      "description": "Whether the course is offered this academic year. Defaults to true.",
       "default": true
     },
     "instructors": {
       "type": "array",
-      "description": "Teaching staff, as printed in the per-semester schedule.",
+      "description": "Teaching staff, where known.",
       "items": { "type": "string", "minLength": 1 }
     },
     "description_url": {
@@ -123,10 +95,6 @@
         "el": { "type": "string", "minLength": 1, "description": "Greek (source of truth)." },
         "en": { "type": "string", "minLength": 1, "description": "English (optional)." }
       }
-    },
-    "specRole": {
-      "type": "string",
-      "enum": ["mandatory", "basic"]
     }
   }
 }

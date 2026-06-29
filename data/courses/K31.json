@@ -3,17 +3,16 @@
   "title": {
     "el": "Μεταγλωττιστές"
   },
-  "category": "direction_elective",
+  "category": "basic",
   "hours": {
     "theory": 4,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     6
   ],
-  "direction": "CS",
   "prerequisites": [
     {
       "code": "Κ08",
@@ -25,13 +24,7 @@
     },
     {
       "code": "Κ14",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S3": "mandatory"
-  },
-  "instructors": [
-    "Ι. Σμαραγδάκης"
   ]
 }
