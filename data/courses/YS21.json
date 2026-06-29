@@ -3,17 +3,16 @@
   "title": {
     "el": "Σχολική Τάξη και Μικροδιδασκαλία"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 2,
     "tutorial": 0,
     "lab": 2
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     8
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "ΥΣ10",
@@ -23,8 +22,5 @@
       "code": "ΥΣ15",
       "type": "required"
     }
-  ],
-  "instructors": [
-    "Α. Γόγουλου (μάθημα υποχρεωτικό για απόκτηση ΠΠΔΕ)"
   ]
 }

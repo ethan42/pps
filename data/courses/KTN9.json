@@ -1,0 +1,30 @@
+{
+  "code": "ΚΤΝ9",
+  "title": {
+    "el": "Διαδίκτυο των Πραγμάτων και Διασυνδεδεμένες Μηχανές"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ16",
+      "type": "required"
+    },
+    {
+      "code": "Κ33",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ4",
+      "type": "required"
+    }
+  ]
+}

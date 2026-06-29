@@ -1,0 +1,29 @@
+{
+  "id": "C4",
+  "name": {
+    "el": "Ευφυείς Επικοινωνίες και Δίκτυα",
+    "en": "Intelligent Communications and Networks"
+  },
+  "basic_courses": [
+    "Κ33",
+    "ΕΠ04",
+    "ΚΤΝ4",
+    "ΣΕ4"
+  ],
+  "elective_courses": [
+    "Κ12",
+    "ΕΠ13",
+    "ΕΠ16",
+    "ΕΠ20",
+    "ΥΣ18",
+    "ΚΤΝ6",
+    "ΚΤΝ7",
+    "ΚΤΝ5",
+    "ΚΤΝ8",
+    "ΚΤΝ9"
+  ],
+  "award": {
+    "basic_required": 4,
+    "elective_required": 3
+  }
+}

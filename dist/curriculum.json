@@ -1,6 +1,6 @@
 {
   "program": {
-    "academic_year": "2025-2026",
+    "academic_year": "2026-2027",
     "institution": {
       "el": "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών",
       "en": "National and Kapodistrian University of Athens"
@@ -13,612 +13,197 @@
       "el": "Πληροφορική και Τηλεπικοινωνίες",
       "en": "Informatics and Telecommunications"
     },
-    "directions": [
-      {
-        "id": "CS",
-        "name": {
-          "el": "Επιστήμη Υπολογιστών",
-          "en": "Computer Science"
-        }
-      },
-      {
-        "id": "CET",
-        "name": {
-          "el": "Μηχανική Υπολογιστών και Τηλεπικοινωνιών",
-          "en": "Computer Engineering and Telecoms"
-        }
-      }
-    ],
     "graduation_rules": {
-      "direction_elective_choose": 4,
-      "projects_choose": 1,
-      "free_courses_max": 2,
-      "specialization_award": "Claim a specialization by taking its 2 mandatory ΕΥ courses plus 4 of the 8 optional courses that are basic (Β) to it.",
-      "source_text": "Επιλογή 1η-4η: a student may claim one or two of six specializations by choosing 4 of the 5/6 direction electives (ΕΥ), 1 of 2 projects, and 4 of 8 basic optionals per specialization, plus 0-2 free courses. See guide pp. 61-62. TODO: confirm total_ects and per-category counts."
+      "total_ects": 240,
+      "core": {
+        "choose": 21,
+        "offered": 21,
+        "ects": 138
+      },
+      "basic": {
+        "choose": 7,
+        "offered": 16,
+        "ects": 42
+      },
+      "capstone": {
+        "choose": 1,
+        "offered": 5,
+        "ects": 6
+      },
+      "thesis_or_internship_ects": 12,
+      "concentrations": {
+        "required": 1,
+        "offered": 5
+      },
+      "concentration_award": "Claim a concentration by passing all 4 of its basic courses plus any 3 of its electives.",
+      "source_text": "Για την απόκτηση του πτυχίου απαιτούνται κατ' ελάχιστον 240 ECTS: 21 Μαθήματα Κορμού (138 ECTS), 7 Βασικά Μαθήματα από 16 προσφερόμενα (42 ECTS), 1 Συνθετική Εργασία/Capstone από 5 (6 ECTS), Πτυχιακή Εργασία (12 ECTS) Ή Πρακτική Άσκηση (12 ECTS, αμοιβαίως αποκλειόμενες), κατοχύρωση τουλάχιστον μίας ειδίκευσης εκ των 5, και επιπλέον μαθήματα επιλογής ώστε το σύνολο να φτάνει τα 240 ECTS."
     }
   },
-  "specializations": [
+  "concentrations": [
     {
-      "id": "S1",
+      "id": "C1",
       "name": {
-        "el": "Θεμελιώσεις Πληροφορικής",
-        "en": "Foundations of Informatics"
+        "el": "Θεμελιώσεις Επιστήμης Υπολογιστών και Μηχανικής Μάθησης",
+        "en": "Foundations of Computer Science and Machine Learning"
       },
-      "direction": "CS"
+      "basic_courses": [
+        "Κ25",
+        "Κ20α",
+        "ΘΠ22",
+        "ΣΕ1"
+      ],
+      "elective_courses": [
+        "ΘΠ01",
+        "ΘΠ05",
+        "ΘΠ09",
+        "ΘΠ12",
+        "ΘΠ11",
+        "ΘΠ20",
+        "ΘΠ24",
+        "ΘΠ10",
+        "ΘΠ19",
+        "ΘΠ21",
+        "ΘΠ23",
+        "ΘΠ02",
+        "Κ15"
+      ],
+      "award": {
+        "basic_required": 4,
+        "elective_required": 3
+      }
     },
     {
-      "id": "S2",
+      "id": "C2",
       "name": {
-        "el": "Διαχείριση Δεδομένων και Γνώσης",
-        "en": "Data and Knowledge Management"
+        "el": "Λογισμικό και Ασφάλεια Υπολογιστικών Συστημάτων",
+        "en": "Software and Computer Systems Security"
       },
-      "direction": "CS"
+      "basic_courses": [
+        "Κ31",
+        "ΥΣ13",
+        "Κ18",
+        "ΣΕ2"
+      ],
+      "elective_courses": [
+        "ΥΣ08",
+        "ΥΣ05",
+        "ΘΠ01",
+        "ΥΣ14",
+        "ΥΣ04",
+        "ΥΣ09",
+        "ΥΣ99",
+        "ΥΣ16α",
+        "Κ30",
+        "ΘΠ02"
+      ],
+      "award": {
+        "basic_required": 4,
+        "elective_required": 3
+      }
     },
     {
-      "id": "S3",
+      "id": "C3",
       "name": {
-        "el": "Λογισμικό",
-        "en": "Software"
+        "el": "Συστήματα, Αρχιτεκτονική και Υλικό",
+        "en": "Systems, Architecture and Hardware"
       },
-      "direction": "CS"
+      "basic_courses": [
+        "Κ30",
+        "ΘΠ04",
+        "ΥΣ03",
+        "ΣΕ3"
+      ],
+      "elective_courses": [
+        "Κ12",
+        "Κ19",
+        "ΥΣ16α",
+        "ΥΣ99",
+        "ΥΣ29",
+        "ΕΠ01",
+        "ΕΠ16",
+        "ΚΤΝ5"
+      ],
+      "award": {
+        "basic_required": 4,
+        "elective_required": 3
+      }
     },
     {
-      "id": "S4",
+      "id": "C4",
       "name": {
-        "el": "Υλικό και Αρχιτεκτονική",
-        "en": "Hardware and Architecture"
+        "el": "Ευφυείς Επικοινωνίες και Δίκτυα",
+        "en": "Intelligent Communications and Networks"
       },
-      "direction": "CET"
+      "basic_courses": [
+        "Κ33",
+        "ΕΠ04",
+        "ΚΤΝ4",
+        "ΣΕ4"
+      ],
+      "elective_courses": [
+        "Κ12",
+        "ΕΠ13",
+        "ΕΠ16",
+        "ΕΠ20",
+        "ΥΣ18",
+        "ΚΤΝ6",
+        "ΚΤΝ7",
+        "ΚΤΝ5",
+        "ΚΤΝ8",
+        "ΚΤΝ9"
+      ],
+      "award": {
+        "basic_required": 4,
+        "elective_required": 3
+      }
     },
     {
-      "id": "S5",
+      "id": "C5",
       "name": {
-        "el": "Επικοινωνίες και Δικτύωση",
-        "en": "Communications and Networking"
+        "el": "Τεχνητή Νοημοσύνη",
+        "en": "Artificial Intelligence"
       },
-      "direction": "CET"
-    },
-    {
-      "id": "S6",
-      "name": {
-        "el": "Επεξεργασία Σήματος και Πληροφορίας",
-        "en": "Signal and Information Processing"
-      },
-      "direction": "CET"
+      "basic_courses": [
+        "ΥΣ19",
+        "ΕΠ22α",
+        "ΚΤΝ11",
+        "ΣΕ5"
+      ],
+      "elective_courses": [
+        "ΚΤΝ4",
+        "ΘΠ22",
+        "ΥΣ11",
+        "ΕΠ23",
+        "ΘΠ23",
+        "ΚΤΝ10"
+      ],
+      "award": {
+        "basic_required": 4,
+        "elective_required": 3
+      }
     }
   ],
   "courses": [
-    {
-      "code": "10ΕΚ201",
-      "title": {
-        "el": "Προχωρημένα Θέματα Ηλεκτρονικής"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΦΥΣΙΚΗΣ"
-      },
-      "instructors": [
-        "Ε. Νισταζάκης"
-      ]
-    },
-    {
-      "code": "12401",
-      "title": {
-        "el": "Πραγματική Ανάλυση"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 9.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΑΘΗΜΑΤΙΚΩΝ"
-      },
-      "instructors": [
-        "Ε. Δεληγιάννη"
-      ]
-    },
-    {
-      "code": "12439",
-      "title": {
-        "el": "Υπολογιστική Άλγεβρα"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 4.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΑΘΗΜΑΤΙΚΩΝ"
-      },
-      "instructors": [
-        "Γ. Χαλικιάς",
-        "Ε. Ράπτης"
-      ]
-    },
-    {
-      "code": "12541",
-      "title": {
-        "el": "Μαθηματική Στατιστική"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 9.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΑΘΗΜΑΤΙΚΩΝ"
-      },
-      "instructors": [
-        "Φ. Σιάννης"
-      ]
-    },
-    {
-      "code": "12559",
-      "title": {
-        "el": "Θεωρία Παιγνίων και Εφαρμογές"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΑΘΗΜΑΤΙΚΩΝ"
-      },
-      "instructors": [
-        "Α. Μπουρνέτας"
-      ]
-    },
-    {
-      "code": "12654",
-      "title": {
-        "el": "Γραμμικά Μοντέλα"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 7.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΑΘΗΜΑΤΙΚΩΝ"
-      },
-      "instructors": [
-        "Λ. Μελιγκοτσίδου",
-        "Φ. Σιάννης"
-      ]
-    },
-    {
-      "code": "13Β008",
-      "title": {
-        "el": "Βιολογία Κυττάρου"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 9.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΒΙΟΛΟΓΙΑΣ"
-      },
-      "instructors": [
-        "Ι. Τρουγκάκος",
-        "Δ. Στραβοπόδης",
-        "Μ. Αντωνέλου"
-      ]
-    },
-    {
-      "code": "13Β015",
-      "title": {
-        "el": "Εξελικτική Βιολογία"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 7.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΒΙΟΛΟΓΙΑΣ"
-      },
-      "instructors": [
-        "Δ. Σίδερης",
-        "Ε. Βαλάκος",
-        "Π. Παφίλης",
-        "Α. Παρμακέλης"
-      ]
-    },
-    {
-      "code": "13Β041",
-      "title": {
-        "el": "Βιοπληροφορική"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 5.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΒΙΟΛΟΓΙΑΣ"
-      },
-      "instructors": [
-        "B. Οικονομίδου",
-        "Ι. Τρουγκάκος"
-      ]
-    },
-    {
-      "code": "40ΥΕ2095",
-      "title": {
-        "el": "Νομική Πληροφορική"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 4.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΝΟΜΙΚΗΣ"
-      },
-      "instructors": [
-        "Γ. Γιαννόπουλος"
-      ]
-    },
-    {
-      "code": "41ECO101",
-      "title": {
-        "el": "Εισαγωγή στην Οικονομική Ανάλυση"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 7.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΟΙΚΟΝΟΜΙΚΩΝ ΕΠΙΣΤΗΜΩΝ"
-      },
-      "instructors": [
-        "Κ. Ρεπαπής"
-      ]
-    },
-    {
-      "code": "41FIN467",
-      "title": {
-        "el": "Χρηματοοικονομικά Υποδείγματα για Επιχειρηματικές Αποφάσεις"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 7.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΟΙΚΟΝΟΜΙΚΩΝ ΕΠΙΣΤΗΜΩΝ"
-      },
-      "instructors": [
-        "Σ."
-      ]
-    },
-    {
-      "code": "44Μ309",
-      "title": {
-        "el": "Δημιουργία Νέας Επιχείρησης"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΔΙΟΙΚΗΣΗΣ ΕΠΙΧΕΙΡΗΣΕΩΝ ΚΑΙ ΟΡΓΑΝΙΣΜΩΝ"
-      },
-      "instructors": [
-        "Α. Λιβιεράτος (το χειμερινό εξάμηνο θα διδαχθεί"
-      ]
-    },
-    {
-      "code": "61II84",
-      "title": {
-        "el": "Ιστορία του Μεταπολεμικού Κόσμου Ι"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΑΡΧΑΙΟΛΟΓΙΑΣ"
-      },
-      "instructors": [
-        "Ε. Χατζηβασιλείου"
-      ]
-    },
-    {
-      "code": "67ΨΧ32",
-      "title": {
-        "el": "Ψηφιακές Τεχνολογίες στην Εκπαίδευση –"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Π. Κυνηγός"
-      ]
-    },
-    {
-      "code": "69Μ090",
-      "title": {
-        "el": "Εισαγωγή στην Μουσική Τεχνολογία"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 5.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΟΥΣΙΚΩΝ ΣΠΟΥΔΩΝ"
-      },
-      "instructors": [
-        "A. Ανδρεοπούλου"
-      ]
-    },
-    {
-      "code": "69Μ232",
-      "title": {
-        "el": "Εισαγωγή στον Μουσικό Προγραμματισμό"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 5.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΜΟΥΣΙΚΩΝ ΣΠΟΥΔΩΝ"
-      },
-      "instructors": [
-        "Θ. Πολυμενέας - Λιοντήρης"
-      ]
-    },
-    {
-      "code": "74TEK001",
-      "title": {
-        "el": "Εισαγωγή στην Παιδαγωγική"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Δ. Φωτεινός"
-      ]
-    },
-    {
-      "code": "74TEK003",
-      "title": {
-        "el": "Παιδαγωγική Ψυχολογία"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Φ. Αντωνίου"
-      ]
-    },
-    {
-      "code": "74ΤΕΚ009",
-      "title": {
-        "el": "Αναλυτικά Προγράμματα"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Δ. Φωτεινός"
-      ]
-    },
-    {
-      "code": "74ΤΕΚ014",
-      "title": {
-        "el": "Θεωρία και Μεθοδολογία της Διδασκαλίας"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Μ. Μαμούρα"
-      ]
-    },
-    {
-      "code": "74ΤΕΚ228",
-      "title": {
-        "el": "Το Ψηφιακό Παιχνίδι ως νέος Γραμματισμός"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Φ. Αντωνίου"
-      ]
-    },
-    {
-      "code": "74ΤΕΚ621",
-      "title": {
-        "el": "Ιστορία της Εκπαίδευσης"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Δ. Φωτεινός"
-      ]
-    },
-    {
-      "code": "74ΤΕΚ622",
-      "title": {
-        "el": "Ιστορία της Νεοελληνικής Εκπαίδευσης"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΠΑΙΔΑΓΩΓΙΚΟ ΔΕΥΤΕΡΟΒΑΘΜΙΑΣ ΕΚΠΑΙΔΕΥΣΗΣ"
-      },
-      "instructors": [
-        "Δ. Φωτεινός"
-      ]
-    },
-    {
-      "code": "82517",
-      "title": {
-        "el": "Ψηφιακά Παιχνίδια, Εικονικοί Κόσμοι και Μάθηση: Έρευνα και Εφαρμογές"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 5.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΕΚΠΑΙΔΕΥΣΗΣ ΚΑΙ ΑΓΩΓΗΣ ΣΤΗΝ ΠΡΟΣΧΟΛΙΚΗ ΗΛΙΚΙΑ"
-      },
-      "instructors": [
-        "A."
-      ]
-    },
-    {
-      "code": "86Ε31",
-      "title": {
-        "el": "Επιστήμη, Τεχνολογία, Περιβάλλον"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 5.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Α. Τύμπας",
-        "Γ. Φέρμελη"
-      ]
-    },
-    {
-      "code": "86Ε38",
-      "title": {
-        "el": "Γνωσιακή Επιστήμη"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 5.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Ε. Σκαλιώρα"
-      ]
-    },
-    {
-      "code": "86Υ06",
-      "title": {
-        "el": "Ιστορία: Αρχαιότητα και Μέσοι Χρόνοι"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Μ. Σιάλαρος"
-      ]
-    },
-    {
-      "code": "86Υ16",
-      "title": {
-        "el": "Φιλοσοφία της Επιστήμης"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Β. Κιντή"
-      ]
-    },
-    {
-      "code": "86Υ21",
-      "title": {
-        "el": "Επιστήμη, Τεχνολογία, Κοινωνία"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 6.0,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Ε. Αραποστάθης"
-      ]
-    },
-    {
-      "code": "86ΥΙ06",
-      "title": {
-        "el": "Ιστορία της Τεχνολογίας"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 5.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Ε. Αραποστάθης"
-      ]
-    },
-    {
-      "code": "86ΥΙ12",
-      "title": {
-        "el": "Επιστημονική και Τεχνολογική Πολιτική"
-      },
-      "category": "free",
-      "term": "winter",
-      "ects": 5.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Εντεταλμένος Διδάσκοντας"
-      ]
-    },
-    {
-      "code": "86ΥΙ13",
-      "title": {
-        "el": "Φύλο, Επιστήμη, Τεχνολογία"
-      },
-      "category": "free",
-      "term": "spring",
-      "ects": 5.5,
-      "department": {
-        "el": "ΤΜΗΜΑ ΙΣΤΟΡΙΑΣ ΚΑΙ ΦΙΛΟΣΟΦΙΑΣ ΤΗΣ ΕΠΙΣΤΗΜΗΣ"
-      },
-      "instructors": [
-        "Α. Βλαντώνη"
-      ]
-    },
     {
       "code": "ΕΠ01",
       "title": {
         "el": "Σχεδίαση VLSI Κυκλωμάτων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
-        "tutorial": 0,
-        "lab": 1
+        "tutorial": 1,
+        "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ19",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S4": "basic"
-      },
-      "instructors": [
-        "Θ. Νίκας"
       ]
     },
     {
@@ -626,518 +211,200 @@
       "title": {
         "el": "Ψηφιακές Επικοινωνίες"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
-        8
+        6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ21",
           "type": "required"
-        }
-      ],
-      "specialization_roles": {
-        "S5": "basic"
-      },
-      "instructors": [
-        "Ν. Πασσάς"
-      ]
-    },
-    {
-      "code": "ΕΠ05",
-      "title": {
-        "el": "Κύματα, Κυματοδηγοί, Κεραίες"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 1
-      },
-      "ects": 6.0,
-      "semester": [
-        5
-      ],
-      "direction": null,
-      "prerequisites": [
+        },
         {
-          "code": "Κ12",
+          "code": "Κ20β",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S5": "basic"
-      },
-      "instructors": [
-        "Α. Τσίπουρας"
-      ]
-    },
-    {
-      "code": "ΕΠ07",
-      "title": {
-        "el": "Επεξεργασία Στοχαστικών Σημάτων"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        6
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ11",
-          "type": "required"
-        }
-      ],
-      "specialization_roles": {
-        "S5": "basic",
-        "S6": "basic"
-      },
-      "instructors": [
-        "Γ. Αλεξανδρόπουλος"
-      ]
-    },
-    {
-      "code": "ΕΠ08",
-      "title": {
-        "el": "Αναγνώριση Προτύπων –Μηχανική Μάθηση"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        6
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ13",
-          "type": "required"
-        }
-      ],
-      "specialization_roles": {
-        "S1": "basic",
-        "S2": "basic",
-        "S6": "basic"
-      },
-      "instructors": [
-        "Ι. Παναγάκης",
-        "Ν. Περδικοπάνης"
-      ]
-    },
-    {
-      "code": "ΕΠ10",
-      "title": {
-        "el": "Επεξεργασία Εικόνας"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 1
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "specialization_roles": {
-        "S6": "basic"
-      },
-      "instructors": [
-        "Ι. Μαδεμλής"
-      ]
-    },
-    {
-      "code": "ΕΠ11",
-      "title": {
-        "el": "Ανάπτυξη Εικονικών Οργάνων για Λήψη και Επεξεργασία Σημάτων (Συστήματα Ψηφιακής Επεξεργασίας Σήματος σε Πραγματικό Χρόνο)"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 2,
-        "tutorial": 0,
-        "lab": 2
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ11",
-          "type": "required"
-        }
-      ],
-      "specialization_roles": {
-        "S4": "basic",
-        "S6": "basic"
-      }
-    },
-    {
-      "code": "ΕΠ12",
-      "title": {
-        "el": "Φωτονική"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 1
-      },
-      "ects": 6.0,
-      "semester": [
-        8
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ19",
-          "type": "required"
-        }
-      ],
-      "instructors": [
-        "Γ. Κανέλλος"
       ]
     },
     {
       "code": "ΕΠ13",
       "title": {
-        "el": "Ασύρματες Επικοινωνίες και Συστήματα (Ασύρματες Ζεύξεις)"
+        "el": "Ασύρματες Επικοινωνίες και Συστήματα"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 0,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
-        5
+        7
       ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "Κ12",
+          "code": "Κ21",
+          "type": "required"
+        },
+        {
+          "code": "ΕΠ04",
+          "type": "required"
+        },
+        {
+          "code": "Κ20β",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S5": "basic"
-      },
-      "instructors": [
-        "Γ. Αλεξανδρόπουλος"
       ]
     },
     {
       "code": "ΕΠ16",
       "title": {
-        "el": "Οπτικές Επικοινωνίες και Οπτικά Δίκτυα"
+        "el": "Οπτικές Επικοινωνίες και Συστήματα"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "Κ12",
+          "code": "Κ21",
           "type": "required"
-        }
-      ],
-      "specialization_roles": {
-        "S4": "basic",
-        "S5": "basic"
-      },
-      "instructors": [
-        "Γ. Κανέλλος"
-      ]
-    },
-    {
-      "code": "ΕΠ18",
-      "title": {
-        "el": "Συστήματα Κινητών και Προσωπικών Επικοινωνιών"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
+        },
         {
           "code": "Κ16",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S5": "basic"
-      },
-      "instructors": [
-        "Ν. Πασσάς"
-      ]
-    },
-    {
-      "code": "ΕΠ19",
-      "title": {
-        "el": "Επεξεργασία Ομιλίας και Φυσικής Γλώσσας"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 1
-      },
-      "ects": 6.0,
-      "semester": [
-        8
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ11",
-          "type": "required"
-        }
-      ],
-      "instructors": [
-        "Σ. Καζάζης"
       ]
     },
     {
       "code": "ΕΠ20",
       "title": {
-        "el": "Τηλεπικοινωνιακά Δίκτυα"
+        "el": "Τεχνολογίες Ασύρματων Δικτύων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
-        "tutorial": 0,
-        "lab": 1
+        "tutorial": 1,
+        "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
-        5
+        7
       ],
-      "direction": null,
       "prerequisites": [
+        {
+          "code": "Κ21",
+          "type": "required"
+        },
         {
           "code": "Κ16",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S5": "basic"
-      },
-      "instructors": [
-        "Δ. Βαρουτάς",
-        "Δ.Κατσιάνης"
       ]
     },
     {
-      "code": "ΕΠ21",
+      "code": "ΕΠ22α",
       "title": {
-        "el": "Μουσική Πληροφορική"
+        "el": "Ενισχυτική Μηχανική Μάθηση"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
-        "theory": 2,
+        "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 4.0,
+      "ects": 6,
       "semester": [
-        8
+        7
       ],
-      "direction": null,
-      "specialization_roles": {
-        "S6": "basic"
-      }
-    },
-    {
-      "code": "ΕΠ22",
-      "title": {
-        "el": "Ειδικά Θέματα Επικοινωνιών και Επεξεργασίας Σήματος"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        7,
-        8
-      ],
-      "direction": null
+      "prerequisites": [
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        },
+        {
+          "code": "Κ13",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ3",
+          "type": "required"
+        }
+      ]
     },
     {
       "code": "ΕΠ23",
       "title": {
-        "el": "Ανάλυση Εικόνας και Τεχνητή Όραση"
+        "el": "Όραση Υπολογιστών"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 0,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "Κ32",
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ3",
           "type": "required"
         }
-      ],
-      "instructors": [
-        "Ι. Μαδεμλής"
       ]
     },
     {
-      "code": "ΕΠ24",
+      "code": "ΕΘ",
       "title": {
-        "el": "Μικροοικονομική Ανάλυση"
+        "el": "Ειδικά Θέματα"
       },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        8
-      ],
-      "direction": null,
-      "instructors": [
-        "Δ. Βαρουτάς",
-        "Δ. Κατσιάνης"
-      ]
-    },
-    {
-      "code": "ΕΠ25",
-      "title": {
-        "el": "Ενισχυτική Μηχανική Μάθηση και Στοχαστικά Παίγνια"
-      },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 4,
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "instructors": [
-        "Ν. Καλουπτσίδης"
-      ]
-    },
-    {
-      "code": "ΓΠ03",
-      "title": {
-        "el": "Δομή και Θεσμοί της Ευρωπαϊκής Ένωσης"
-      },
-      "category": "general_education",
-      "hours": {
-        "theory": 2,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 2.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "instructors": [
-        "Ι. Τολίδης"
-      ]
-    },
-    {
-      "code": "ΓΠ05",
-      "title": {
-        "el": "Διοίκηση Έργων και Τεχνολογίες Παρουσίασης και Συγγραφής Επιστημονικών Εκθέσεων"
-      },
-      "category": "general_education",
-      "hours": {
-        "theory": 2,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 2.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null
-    },
-    {
-      "code": "ΓΠ07",
-      "title": {
-        "el": "Εισαγωγή στην Πληροφορική και στις Τηλεπικοινωνίες"
-      },
-      "category": "general_education",
-      "hours": {
-        "theory": 2,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 2.0,
-      "semester": [
-        1
-      ],
-      "direction": null
+      "notes": "ECTS 4–6 ανάλογα με το αντικείμενο."
     },
     {
       "code": "Κ01",
       "title": {
-        "el": "Ανάλυση Ι"
+        "el": "Συνεχή Μαθηματικά: Λογισμός πολλών μεταβλητών και Γραμμική Άλγεβρα"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 4,
         "tutorial": 2,
         "lab": 0
       },
-      "ects": 8.0,
+      "ects": 6,
       "semester": [
         2
-      ],
-      "direction": null,
-      "instructors": [
-        "Μ. Παπαδάτος"
       ]
     },
     {
@@ -1145,17 +412,16 @@
       "title": {
         "el": "Λογική Σχεδίαση"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         1
-      ],
-      "direction": null
+      ]
     },
     {
       "code": "Κ02ε",
@@ -1168,93 +434,63 @@
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 2.0,
+      "ects": 2,
       "semester": [
         1
-      ],
-      "direction": null
+      ]
     },
     {
       "code": "Κ03",
       "title": {
-        "el": "Γραμμική Άλγεβρα"
+        "el": "Συνεχή Μαθηματικά: Βασικές Έννοιες Διαφορικού και Διανυσματικού Λογισμού"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
-        "theory": 3,
+        "theory": 4,
         "tutorial": 2,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 7,
       "semester": [
         1
-      ],
-      "direction": null
+      ]
     },
     {
       "code": "Κ04",
       "title": {
         "el": "Εισαγωγή στον Προγραμματισμό"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 2
       },
-      "ects": 7.0,
+      "ects": 8,
       "semester": [
         1
-      ],
-      "direction": null
-    },
-    {
-      "code": "Κ06",
-      "title": {
-        "el": "Ανάλυση ΙΙ"
-      },
-      "category": "compulsory",
-      "hours": {
-        "theory": 4,
-        "tutorial": 2,
-        "lab": 0
-      },
-      "ects": 8.0,
-      "semester": [
-        3
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ01",
-          "type": "recommended"
-        }
       ]
     },
     {
       "code": "Κ08",
       "title": {
-        "el": "Δομές Δεδομένων και Τεχν. Προγραμματισμού"
+        "el": "Δομές Δεδομένων και Τεχνικές Προγραμματισμού"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 7.0,
+      "ects": 8,
       "semester": [
         2
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ04",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "instructors": [
-        "Κ. Χατζηκοκολάκης"
       ]
     },
     {
@@ -1262,38 +498,36 @@
       "title": {
         "el": "Διακριτά Μαθηματικά"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 4,
         "tutorial": 2,
         "lab": 0
       },
-      "ects": 7.0,
+      "ects": 7,
       "semester": [
         1
-      ],
-      "direction": null
+      ]
     },
     {
       "code": "Κ10",
       "title": {
         "el": "Αντικειμενοστραφής Προγραμματισμός"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 2
       },
-      "ects": 8.0,
+      "ects": 8,
       "semester": [
         3
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ04",
-          "type": "recommended"
+          "type": "required"
         }
       ]
     },
@@ -1302,28 +536,27 @@
       "title": {
         "el": "Σήματα και Συστήματα"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         3
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ01",
-          "type": "recommended"
+          "type": "required"
         }
       ]
     },
     {
       "code": "Κ11ε",
       "title": {
-        "el": "Εργαστήριο Κυκλωμάτων και Συστημάτων"
+        "el": "Εργαστήριο Σημάτων και Συστημάτων"
       },
       "category": "standalone_lab",
       "hours": {
@@ -1331,74 +564,64 @@
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 2.0,
+      "ects": 2,
       "semester": [
         3
-      ],
-      "direction": null
+      ]
     },
     {
       "code": "Κ12",
       "title": {
-        "el": "Ηλεκτρομαγνητισμός, Οπτική, Σύγχρονη Φυσική"
+        "el": "Σύγχρονη Φυσική"
       },
-      "category": "compulsory",
+      "category": "basic",
       "hours": {
-        "theory": 4,
-        "tutorial": 4,
+        "theory": 3,
+        "tutorial": 1,
         "lab": 0
       },
-      "ects": 8.0,
+      "ects": 6,
       "semester": [
-        2
+        5
       ],
-      "direction": null,
-      "instructors": [
-        "Δ. Συβρίδης",
-        "Α. Τσίπουρας"
-      ]
+      "notes": "Προσωρινός τίτλος — το όνομα θα οριστικοποιηθεί από τον Γ' Τομέα (όνομα από Γ' Τομέα)."
     },
     {
       "code": "Κ13",
       "title": {
         "el": "Πιθανότητες και Στατιστική"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 7,
       "semester": [
         3
-      ],
-      "direction": null
+      ]
     },
     {
       "code": "Κ14",
       "title": {
-        "el": "Αρχιτεκτονική Υπολογιστών Ι"
+        "el": "Αρχιτεκτονική Υπολογιστών"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 7.0,
+      "ects": 8,
       "semester": [
         2
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ02",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "instructors": [
-        "Δ. Γκιζόπουλος"
       ]
     },
     {
@@ -1406,66 +629,47 @@
       "title": {
         "el": "Αριθμητική Ανάλυση"
       },
-      "category": "direction_elective",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": "CS",
       "prerequisites": [
         {
           "code": "Κ01",
-          "type": "recommended"
+          "type": "required"
         },
         {
           "code": "Κ03",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "mandatory"
-      },
-      "instructors": [
-        "Μ. Λουκά"
       ]
     },
     {
       "code": "Κ16",
       "title": {
-        "el": "Δίκτυα Επικοινωνιών Ι"
+        "el": "Εισαγωγή στα Δίκτυα Υπολογιστών"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         4
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ13",
-          "type": "recommended"
-        }
-      ],
-      "instructors": [
-        "Ι. Σταυρακάκης",
-        "Κ. Χριστοδουλόπουλος",
-        "Α. Βάιος"
       ]
     },
     {
       "code": "Κ16ε",
       "title": {
-        "el": "Εργαστήριο Δικτύων Επικοινωνιών Ι"
+        "el": "Εργαστήριο Δικτύων Υπολογιστών"
       },
       "category": "standalone_lab",
       "hours": {
@@ -1473,15 +677,10 @@
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 2.0,
+      "ects": 2,
       "semester": [
         4,
         5
-      ],
-      "direction": null,
-      "instructors": [
-        "Ι. Σταυρακάκης",
-        "Α. Βάιος"
       ]
     },
     {
@@ -1489,30 +688,25 @@
       "title": {
         "el": "Αλγόριθμοι και Πολυπλοκότητα"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 4,
         "tutorial": 2,
         "lab": 0
       },
-      "ects": 8.0,
+      "ects": 6,
       "semester": [
         4
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
-          "type": "recommended"
+          "type": "required"
         },
         {
           "code": "Κ09",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "instructors": [
-        "Α. Γιαννοπούλου",
-        "Ο. Φουρτουνέλλη"
       ]
     },
     {
@@ -1520,29 +714,21 @@
       "title": {
         "el": "Υλοποίηση Συστημάτων Βάσεων Δεδομένων"
       },
-      "category": "direction_elective",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": "CS",
       "prerequisites": [
         {
           "code": "Κ29",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S2": "mandatory",
-        "S3": "mandatory"
-      },
-      "instructors": [
-        "Ι. Ιωαννίδης"
       ]
     },
     {
@@ -1550,104 +736,69 @@
       "title": {
         "el": "Ηλεκτρονική"
       },
-      "category": "direction_elective",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
-        "lab": 0
+        "lab": 2
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": "CET",
       "prerequisites": [
         {
           "code": "Κ11ε",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S4": "mandatory"
-      },
-      "instructors": [
-        "Δ. Συβρίδης",
-        "Θ. Νίκας"
-      ]
-    },
-    {
-      "code": "Κ19ε",
-      "title": {
-        "el": "Εργαστήριο Ηλεκτρονικής"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 0,
-        "tutorial": 1,
-        "lab": 3
-      },
-      "ects": 6.0,
-      "semester": [
-        6
-      ],
-      "direction": null,
-      "specialization_roles": {
-        "S4": "basic"
-      },
-      "instructors": [
-        "Θ. Νίκας"
       ]
     },
     {
       "code": "Κ20α",
       "title": {
-        "el": "Μαθηματικά Πληροφορικής"
+        "el": "Προχωρημένα Διακριτά Μαθηματικά"
       },
-      "category": "direction_elective",
+      "category": "basic",
       "hours": {
         "theory": 4,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": "CS",
       "prerequisites": [
         {
           "code": "Κ09",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "mandatory"
-      },
-      "instructors": [
-        "Σ. Κολλιόπουλος"
       ]
     },
     {
       "code": "Κ20β",
       "title": {
-        "el": "Εφαρμοσμένα Μαθηματικά"
+        "el": "Συνεχή Μαθηματικά: Διανυσματικές Συναρτήσεις και Βελτιστοποίηση"
       },
-      "category": "optional",
+      "category": "core",
       "hours": {
-        "theory": 3,
-        "tutorial": 1,
+        "theory": 4,
+        "tutorial": 2,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 7,
       "semester": [
-        2
+        3
       ],
-      "direction": null,
-      "specialization_roles": {
-        "S6": "basic"
-      },
-      "instructors": [
-        "Μ. Λουκά"
+      "prerequisites": [
+        {
+          "code": "Κ01",
+          "type": "required"
+        },
+        {
+          "code": "Κ03",
+          "type": "required"
+        }
       ]
     },
     {
@@ -1655,26 +806,25 @@
       "title": {
         "el": "Συστήματα Επικοινωνιών"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 7.0,
+      "ects": 6,
       "semester": [
         4
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ11",
-          "type": "recommended"
+          "type": "required"
+        },
+        {
+          "code": "Κ01",
+          "type": "required"
         }
-      ],
-      "instructors": [
-        "Γ. Κανέλλος",
-        "Α. Λυγίζου"
       ]
     },
     {
@@ -1682,17 +832,16 @@
       "title": {
         "el": "Λειτουργικά Συστήματα"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 4,
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 8.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
@@ -1700,132 +849,8 @@
         },
         {
           "code": "Κ14",
-          "type": "recommended"
-        }
-      ],
-      "instructors": [
-        "Α. Δελής",
-        "Ε. Χατζηευθυμιάδης",
-        "Σ. Πασκαλής"
-      ]
-    },
-    {
-      "code": "Κ23α",
-      "title": {
-        "el": "Ανάπτυξη Λογισμικού για Πληροφοριακά Συστήματα"
-      },
-      "category": "project",
-      "hours": {
-        "theory": 1,
-        "tutorial": 0,
-        "lab": 5
-      },
-      "ects": 8.0,
-      "semester": [
-        7
-      ],
-      "direction": "CS",
-      "prerequisites": [
-        {
-          "code": "Κ18",
           "type": "required"
-        },
-        {
-          "code": "Κ29",
-          "type": "recommended"
         }
-      ],
-      "instructors": [
-        "Ι. Ιωαννίδης",
-        "Σ. Πασκαλής"
-      ]
-    },
-    {
-      "code": "Κ23β",
-      "title": {
-        "el": "Ανάπτυξη Λογισμικού για Συστήματα Δικτύων και Τηλεπικοινωνιών"
-      },
-      "category": "project",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 3
-      },
-      "ects": 8.0,
-      "semester": [
-        7
-      ],
-      "direction": "CET",
-      "prerequisites": [
-        {
-          "code": "Κ16",
-          "type": "required"
-        },
-        {
-          "code": "Κ33",
-          "type": "recommended"
-        }
-      ],
-      "instructors": [
-        "Α. Αλωνιστιώτη"
-      ]
-    },
-    {
-      "code": "Κ23δ",
-      "title": {
-        "el": "Ανάπτυξη Υλικού- Λογισμικού για Ενσωματωμένα Συστήματα"
-      },
-      "category": "project",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 3
-      },
-      "ects": 8.0,
-      "semester": [
-        8
-      ],
-      "direction": "CET",
-      "prerequisites": [
-        {
-          "code": "ΥΣ03",
-          "type": "required"
-        },
-        {
-          "code": "Κ14",
-          "type": "recommended"
-        }
-      ]
-    },
-    {
-      "code": "Κ23γ",
-      "title": {
-        "el": "Ανάπτυξη Λογισμικού για Αλγοριθμικά Προβλήματα"
-      },
-      "category": "project",
-      "hours": {
-        "theory": 1,
-        "tutorial": 2,
-        "lab": 1
-      },
-      "ects": 8.0,
-      "semester": [
-        7
-      ],
-      "direction": "CS",
-      "prerequisites": [
-        {
-          "code": "Κ17",
-          "type": "required"
-        },
-        {
-          "code": "Κ25",
-          "type": "recommended"
-        }
-      ],
-      "instructors": [
-        "Ι. Εμίρης",
-        "Ι. Χαμόδρακας"
       ]
     },
     {
@@ -1833,17 +858,16 @@
       "title": {
         "el": "Προγραμματισμός Συστήματος"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 4,
-        "tutorial": 0,
-        "lab": 1
+        "tutorial": 1,
+        "lab": 0
       },
-      "ects": 8.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
@@ -1851,13 +875,8 @@
         },
         {
           "code": "Κ14",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "instructors": [
-        "Ι. Ρουσσοπούλου",
-        "Α. Ντούλας",
-        "Ν. Περδικοπάνης"
       ]
     },
     {
@@ -1865,28 +884,21 @@
       "title": {
         "el": "Θεωρία Υπολογισμού"
       },
-      "category": "direction_elective",
+      "category": "basic",
       "hours": {
-        "theory": 3,
-        "tutorial": 1,
+        "theory": 4,
+        "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": "CS",
       "prerequisites": [
         {
           "code": "Κ17",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S2": "mandatory"
-      },
-      "instructors": [
-        "Π. Ροντογιάννης"
       ]
     },
     {
@@ -1894,21 +906,20 @@
       "title": {
         "el": "Σχεδίαση και Χρήση Βάσεων Δεδομένων"
       },
-      "category": "compulsory",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 7.0,
+      "ects": 6,
       "semester": [
         4
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
-          "type": "recommended"
+          "type": "required"
         }
       ]
     },
@@ -1917,28 +928,21 @@
       "title": {
         "el": "Αρχιτεκτονική Υπολογιστών ΙΙ"
       },
-      "category": "direction_elective",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": "CET",
       "prerequisites": [
         {
           "code": "Κ14",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S4": "mandatory"
-      },
-      "instructors": [
-        "Δ. Γκιζόπουλος"
       ]
     },
     {
@@ -1946,17 +950,16 @@
       "title": {
         "el": "Μεταγλωττιστές"
       },
-      "category": "direction_elective",
+      "category": "basic",
       "hours": {
         "theory": 4,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": "CS",
       "prerequisites": [
         {
           "code": "Κ08",
@@ -1968,138 +971,344 @@
         },
         {
           "code": "Κ14",
-          "type": "recommended"
-        }
-      ],
-      "specialization_roles": {
-        "S3": "mandatory"
-      },
-      "instructors": [
-        "Ι. Σμαραγδάκης"
-      ]
-    },
-    {
-      "code": "Κ32",
-      "title": {
-        "el": "Ψηφιακή Επεξεργασία Σήματος"
-      },
-      "category": "direction_elective",
-      "hours": {
-        "theory": 4,
-        "tutorial": 0,
-        "lab": 1
-      },
-      "ects": 6.0,
-      "semester": [
-        5
-      ],
-      "direction": "CET",
-      "prerequisites": [
-        {
-          "code": "Κ11",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S6": "mandatory"
-      },
-      "instructors": [
-        "Γ. Αλεξανδρόπουλος",
-        "Α. Λυγίζου"
       ]
     },
     {
       "code": "Κ33",
       "title": {
-        "el": "Δίκτυα Επικοινωνιών ΙΙ"
+        "el": "Δίκτυα Επικοινωνιών"
       },
-      "category": "direction_elective",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 6.0,
-      "semester": [
-        5
-      ],
-      "direction": "CET",
-      "prerequisites": [
-        {
-          "code": "Κ16",
-          "type": "required"
-        }
-      ],
-      "specialization_roles": {
-        "S5": "mandatory"
-      },
-      "instructors": [
-        "Κ. Χριστοδουλόπουλος"
-      ]
-    },
-    {
-      "code": "Κ34",
-      "title": {
-        "el": "Διαχείριση Δικτύων"
-      },
-      "category": "direction_elective",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": "CET",
       "prerequisites": [
         {
           "code": "Κ16",
           "type": "required"
+        },
+        {
+          "code": "Κ21",
+          "type": "required"
+        },
+        {
+          "code": "Κ20β",
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S5": "mandatory"
-      },
-      "instructors": [
-        "Α. Αλωνιστιώτη"
       ]
     },
     {
       "code": "Κ35",
       "title": {
-        "el": "Θεωρία Πληροφορίας (Θεωρία Πληροφορίας και Κωδίκων)"
+        "el": "Θεωρία Πληροφορίας"
       },
-      "category": "direction_elective",
+      "category": "core",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
-        6
+        4
       ],
-      "direction": "CET",
       "prerequisites": [
         {
           "code": "Κ13",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S6": "mandatory"
-      },
-      "instructors": [
-        "Γ. Αλεξανδρόπουλος"
       ]
     },
     {
-      "code": "ΠΑ1",
+      "code": "ΚΤΝ1",
       "title": {
-        "el": "Πρακτική Άσκηση Ι",
-        "en": "Internship I"
+        "el": "Εισαγωγή στην Τεχνητή Νοημοσύνη"
+      },
+      "category": "core",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        2
+      ]
+    },
+    {
+      "code": "ΚΤΝ10",
+      "title": {
+        "el": "Γραμμικός και Μη Γραμμικός Έλεγχος"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        8
+      ]
+    },
+    {
+      "code": "ΚΤΝ11",
+      "title": {
+        "el": "Αναπαράσταση Γνώσης και Συλλογιστική"
+      },
+      "category": "basic",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        8
+      ],
+      "prerequisites": [
+        {
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "ΥΣ05",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ2",
+      "title": {
+        "el": "Μηχανική Μάθηση"
+      },
+      "category": "core",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        5
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ13",
+          "type": "required"
+        },
+        {
+          "code": "Κ03",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ3",
+      "title": {
+        "el": "Βαθιά Μάθηση"
+      },
+      "category": "core",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        6
+      ],
+      "prerequisites": [
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ4",
+      "title": {
+        "el": "Ομοσπονδιακή Μηχανική Μάθηση"
+      },
+      "category": "basic",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ16",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ3",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ5",
+      "title": {
+        "el": "Κβαντικά Συστήματα και Υπολογισμοί"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        8
+      ],
+      "prerequisites": [
+        {
+          "code": "ΕΠ16",
+          "type": "required"
+        },
+        {
+          "code": "Κ12",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ6",
+      "title": {
+        "el": "Δορυφορικές Επικοινωνίες και Δίκτυα"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ21",
+          "type": "required"
+        },
+        {
+          "code": "ΥΣ18",
+          "type": "required"
+        },
+        {
+          "code": "ΕΠ04",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ7",
+      "title": {
+        "el": "Θεωρία και Συστήματα Εκτίμησης"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        8
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ35",
+          "type": "required"
+        },
+        {
+          "code": "Κ11",
+          "type": "required"
+        },
+        {
+          "code": "Κ20β",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ8",
+      "title": {
+        "el": "Ρομποτικές Επικοινωνίες και Δίκτυα"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ21",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ4",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΚΤΝ9",
+      "title": {
+        "el": "Διαδίκτυο των Πραγμάτων και Διασυνδεδεμένες Μηχανές"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ16",
+          "type": "required"
+        },
+        {
+          "code": "Κ33",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ4",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΠΑ",
+      "title": {
+        "el": "Πρακτική Άσκηση"
       },
       "category": "internship",
       "hours": {
@@ -2107,39 +1316,16 @@
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 8,
+      "ects": 12,
       "semester": [
-        7,
         8
       ],
-      "direction": null,
-      "notes": "Annual course described in prose (guide p. 83); code assigned for this dataset."
+      "notes": "Ένα εξάμηνο. Αμοιβαίως αποκλειόμενη με την Πτυχιακή Εργασία (ΠΕ)."
     },
     {
-      "code": "ΠΑ2",
+      "code": "ΠΕ",
       "title": {
-        "el": "Πρακτική Άσκηση ΙΙ",
-        "en": "Internship II"
-      },
-      "category": "internship",
-      "hours": {
-        "theory": 0,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 8,
-      "semester": [
-        7,
-        8
-      ],
-      "direction": null,
-      "notes": "Annual course described in prose (guide p. 83); code assigned for this dataset."
-    },
-    {
-      "code": "ΠΕ1",
-      "title": {
-        "el": "Πτυχιακή Εργασία Ι",
-        "en": "Thesis I"
+        "el": "Πτυχιακή Εργασία"
       },
       "category": "thesis",
       "hours": {
@@ -2147,62 +1333,163 @@
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 8,
+      "ects": 12,
       "semester": [
         7,
         8
       ],
-      "direction": null,
-      "notes": "Annual course described in prose (guide p. 83); code assigned for this dataset."
+      "notes": "Ετήσια. Αμοιβαίως αποκλειόμενη με την Πρακτική Άσκηση (ΠΑ)."
     },
     {
-      "code": "ΠΕ2",
+      "code": "ΣΕ1",
       "title": {
-        "el": "Πτυχιακή Εργασία ΙΙ",
-        "en": "Thesis II"
+        "el": "Ανάπτυξη Λογισμικού για Αλγοριθμικά Προβλήματα"
       },
-      "category": "thesis",
+      "category": "capstone",
       "hours": {
-        "theory": 0,
+        "theory": 1,
         "tutorial": 0,
-        "lab": 0
+        "lab": 3
       },
-      "ects": 8,
+      "ects": 6,
       "semester": [
-        7,
-        8
+        7
       ],
-      "direction": null,
-      "notes": "Annual course described in prose (guide p. 83); code assigned for this dataset."
+      "prerequisites": [
+        {
+          "code": "Κ17",
+          "type": "required"
+        },
+        {
+          "code": "Κ25",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΣΕ2",
+      "title": {
+        "el": "Ανάπτυξη Λογισμικού για Πληροφοριακά Συστήματα"
+      },
+      "category": "capstone",
+      "hours": {
+        "theory": 1,
+        "tutorial": 0,
+        "lab": 3
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ18",
+          "type": "required"
+        },
+        {
+          "code": "Κ29",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΣΕ3",
+      "title": {
+        "el": "Ανάπτυξη Λογισμικού για Αρχιτεκτονικές Υψηλών Επιδόσεων"
+      },
+      "category": "capstone",
+      "hours": {
+        "theory": 1,
+        "tutorial": 0,
+        "lab": 3
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ14",
+          "type": "required"
+        },
+        {
+          "code": "ΥΣ03",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΣΕ4",
+      "title": {
+        "el": "Ανάπτυξη Λογισμικού για Συστήματα Δικτύων και Τηλεπικοινωνιών"
+      },
+      "category": "capstone",
+      "hours": {
+        "theory": 1,
+        "tutorial": 0,
+        "lab": 3
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ16",
+          "type": "required"
+        },
+        {
+          "code": "Κ33",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΣΕ5",
+      "title": {
+        "el": "Ανάπτυξη Λογισμικού για Συστήματα Τεχνητής Νοημοσύνης"
+      },
+      "category": "capstone",
+      "hours": {
+        "theory": 1,
+        "tutorial": 0,
+        "lab": 3
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        }
+      ]
     },
     {
       "code": "ΘΠ01",
       "title": {
-        "el": "Αρχές Γλωσσών Προγραμματισμού"
+        "el": "Θεμελιώσεις Γλωσσών Προγραμματισμού"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
-        "theory": 3,
-        "tutorial": 1,
+        "theory": 4,
+        "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic",
-        "S2": "basic"
-      },
-      "instructors": [
-        "Π. Ροντογιάννης"
       ]
     },
     {
@@ -2210,59 +1497,21 @@
       "title": {
         "el": "Γραφικά"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 0,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic",
-        "S6": "basic"
-      },
-      "instructors": [
-        "Θ. Θεοχάρης",
-        "Μ. Κυριακάκος"
-      ]
-    },
-    {
-      "code": "ΘΠ03",
-      "title": {
-        "el": "Επιστημονικοί Υπολογισμοί (Αριθμητική Γραμμική Άλγεβρα)"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        6
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ03",
-          "type": "recommended"
-        }
-      ],
-      "specialization_roles": {
-        "S1": "basic"
-      },
-      "instructors": [
-        "Μ. Λουκά"
       ]
     },
     {
@@ -2270,105 +1519,43 @@
       "title": {
         "el": "Παράλληλα Συστήματα"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ14",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S3": "basic",
-        "S4": "basic"
-      }
+      ]
     },
     {
       "code": "ΘΠ05",
       "title": {
         "el": "Κρυπτογραφία"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ17",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic"
-      },
-      "instructors": [
-        "Ι.- Π.- Π.- Χάιδος"
-      ]
-    },
-    {
-      "code": "ΘΠ07",
-      "title": {
-        "el": "Γραφικά ΙΙ"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "ΘΠ02",
-          "type": "required"
-        }
-      ],
-      "offered_this_year": false
-    },
-    {
-      "code": "ΘΠ08",
-      "title": {
-        "el": "Θεωρία Αριθμών"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ09",
-          "type": "required"
-        }
-      ],
-      "instructors": [
-        "Π. Ρούπα"
       ]
     },
     {
@@ -2376,30 +1563,21 @@
       "title": {
         "el": "Αλγοριθμική Επιχειρησιακή Έρευνα"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ17",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic",
-        "S2": "basic",
-        "S6": "basic"
-      },
-      "instructors": [
-        "Ο. Φουρτουνέλλη"
       ]
     },
     {
@@ -2407,28 +1585,21 @@
       "title": {
         "el": "Θεωρία Γραφημάτων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ20α",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic"
-      },
-      "instructors": [
-        "Σ. Κολλιόπουλος"
       ]
     },
     {
@@ -2436,28 +1607,21 @@
       "title": {
         "el": "Υπολογιστική Γεωμετρία"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ17",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic"
-      },
-      "instructors": [
-        "Π. Ρούπα"
       ]
     },
     {
@@ -2465,121 +1629,21 @@
       "title": {
         "el": "Προηγμένα Θέματα Αλγορίθμων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ17",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic"
-      },
-      "instructors": [
-        "Β. Νάκος"
-      ]
-    },
-    {
-      "code": "ΘΠ14",
-      "title": {
-        "el": "Γραμμική και μη Γραμμική Βελτιστοποίηση"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        8
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "ΥΣ02",
-          "type": "required"
-        }
-      ],
-      "offered_this_year": false
-    },
-    {
-      "code": "ΘΠ16",
-      "title": {
-        "el": "Ειδικά Θέματα Θεωρητικής Πληροφορικής"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        7,
-        8
-      ],
-      "direction": null
-    },
-    {
-      "code": "ΘΠ17",
-      "title": {
-        "el": "Αλγόριθμοι Βιοπληροφορικής"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ17",
-          "type": "required"
-        }
-      ],
-      "offered_this_year": false
-    },
-    {
-      "code": "ΘΠ18",
-      "title": {
-        "el": "Προηγμένοι Επιστημονικοί Υπολογισμοί"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ15",
-          "type": "recommended"
-        }
-      ],
-      "instructors": [
-        "Ν. Μισυρλής",
-        "Φ. Τζαφέρης"
       ]
     },
     {
@@ -2587,21 +1651,20 @@
       "title": {
         "el": "Παράλληλοι Αλγόριθμοι"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ17",
-          "type": "recommended"
+          "type": "required"
         }
       ]
     },
@@ -2610,28 +1673,21 @@
       "title": {
         "el": "Υπολογιστική Πολυπλοκότητα"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ25",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S1": "basic"
-      },
-      "instructors": [
-        "Α. Γιαννοπούλου"
       ]
     },
     {
@@ -2639,65 +1695,81 @@
       "title": {
         "el": "Σημασιολογία Γλωσσών Προγραμματισμού"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 4,
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
-      "specialization_roles": {
-        "S1": "basic",
-        "S2": "basic"
-      }
+      "prerequisites": [
+        {
+          "code": "ΘΠ01",
+          "type": "required"
+        }
+      ]
     },
     {
       "code": "ΘΠ22",
       "title": {
-        "el": "Αλγόριθμοι- Θεμελιώσεις Μηχανικής Μάθησης"
+        "el": "Αλγόριθμοι-Θεμελιώσεις Μηχανικής Μάθησης"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
         "theory": 4,
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
-      "specialization_roles": {
-        "S1": "basic",
-        "S2": "basic"
-      }
+      "prerequisites": [
+        {
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "Κ13",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        }
+      ]
     },
     {
       "code": "ΘΠ23",
       "title": {
         "el": "Υπολογιστική Θεωρία Μηχανικής Μάθησης"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 4,
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
-      "specialization_roles": {
-        "S1": "basic",
-        "S2": "basic"
-      },
-      "instructors": [
-        "Εντεταλμένος Διδάσκων"
+      "prerequisites": [
+        {
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "Κ13",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
+        }
       ]
     },
     {
@@ -2705,49 +1777,21 @@
       "title": {
         "el": "Αλγοριθμική Επίλυση Προβλημάτων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 4,
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
-      "instructors": [
-        "Ακαδημαϊκός Υπότροφος"
-      ]
-    },
-    {
-      "code": "ΥΣ02",
-      "title": {
-        "el": "Τεχνητή Νοημοσύνη Ι"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        5
-      ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "Κ08",
+          "code": "Κ17",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S2": "basic",
-        "S3": "basic"
-      },
-      "instructors": [
-        "Π. Σταματόπουλος"
       ]
     },
     {
@@ -2755,17 +1799,16 @@
       "title": {
         "el": "Σχεδίαση Ψηφιακών Συστημάτων VHDL"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 0,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         5
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ02",
@@ -2773,15 +1816,8 @@
         },
         {
           "code": "Κ14",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S4": "basic"
-      },
-      "instructors": [
-        "Α. Πασχάλης",
-        "Β. Βασιλόπουλος"
       ]
     },
     {
@@ -2789,28 +1825,21 @@
       "title": {
         "el": "Ανάλυση/Σχεδίαση Συστημάτων Λογισμικού"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 0,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ10",
-          "type": "recommended"
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S3": "basic"
-      },
-      "instructors": [
-        "Α. Τσαλγατίδου"
       ]
     },
     {
@@ -2818,87 +1847,43 @@
       "title": {
         "el": "Λογικός Προγραμματισμός"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ08",
-          "type": "recommended"
-        }
-      ],
-      "specialization_roles": {
-        "S2": "basic"
-      },
-      "instructors": [
-        "Ι. Καράλη",
-        "Π. Σταματόπουλος"
-      ]
-    },
-    {
-      "code": "ΥΣ07",
-      "title": {
-        "el": "Πληροφοριακά Συστήματα"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 2,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 6.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
-      "prerequisites": [
-        {
-          "code": "Κ29",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S3": "basic"
-      },
-      "offered_this_year": false
+      ]
     },
     {
       "code": "ΥΣ08",
       "title": {
-        "el": "Επικοινωνία Ανθρώπου Μηχανής"
+        "el": "Αλληλεπίδραση Ανθρώπου Υπολογιστή"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
-        7
+        5
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ29",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S2": "basic",
-        "S3": "basic"
-      },
-      "instructors": [
-        "Μ. Ρούσσου",
-        "Α. Κολοβού (μάθημα επιλογής για απόκτηση"
       ]
     },
     {
@@ -2906,47 +1891,41 @@
       "title": {
         "el": "Τεχνολογία Λογισμικού"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ10",
           "type": "required"
+        },
+        {
+          "code": "ΥΣ04",
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S3": "basic"
-      },
-      "offered_this_year": false
+      ]
     },
     {
       "code": "ΥΣ10",
       "title": {
         "el": "Διδακτική της Πληροφορικής"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 2,
         "tutorial": 0,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
-      ],
-      "direction": null,
-      "instructors": [
-        "Α. Γόγουλου",
-        "Λ. Χαλάτση (μάθημα υποχρεωτικό για απόκτηση"
       ]
     },
     {
@@ -2954,49 +1933,29 @@
       "title": {
         "el": "Τεχνικές Εξόρυξης Δεδομένων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "Κ18",
-          "type": "recommended"
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "Κ13",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
+          "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S2": "basic"
-      },
-      "instructors": [
-        "Δ. Γουνόπουλος",
-        "Α. Κολοβού"
-      ]
-    },
-    {
-      "code": "ΥΣ12",
-      "title": {
-        "el": "Καινοτομία και Επιχειρηματικότητα"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 2,
-        "tutorial": 1,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        8
-      ],
-      "direction": null,
-      "instructors": [
-        "Ι. Τολίδης"
       ]
     },
     {
@@ -3004,28 +1963,21 @@
       "title": {
         "el": "Προστασία και Ασφάλεια Υπολογιστικών Συστημάτων"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
-        8
+        6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ22",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S3": "basic"
-      },
-      "instructors": [
-        "Α. Αυγερινός"
       ]
     },
     {
@@ -3033,169 +1985,111 @@
       "title": {
         "el": "Τεχνολογίες Εφαρμογών Διαδικτύου"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 2,
         "tutorial": 1,
         "lab": 1
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ10",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S3": "basic",
-        "S5": "basic"
-      },
-      "instructors": [
-        "Ι. Χαμόδρακας"
       ]
     },
     {
       "code": "ΥΣ15",
       "title": {
-        "el": "Τεχνολογίες της Πληροφορίας και των Επικοινωνιών στη Μάθηση (Πληροφορική & Εκπαίδευση)"
+        "el": "Τεχνολογίες της Πληροφορίας και των Επικοινωνιών στη Μάθηση"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 2,
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
-      ],
-      "direction": null,
-      "instructors": [
-        "Α. Γόγουλου",
-        "Λ. Χαλάτση"
       ]
     },
     {
-      "code": "ΥΣ16",
+      "code": "ΥΣ16α",
       "title": {
-        "el": "Ειδικά Θέματα Υπολογιστικών Συστημάτων και Εφαρμογών"
+        "el": "Υπολογιστικά Συστήματα Μεγάλης Κλίμακας"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
-        "tutorial": 0,
+        "tutorial": 1,
         "lab": 0
       },
-      "ects": 4.0,
+      "ects": 6,
       "semester": [
-        7,
         8
       ],
-      "direction": null
-    },
-    {
-      "code": "ΥΣ17",
-      "title": {
-        "el": "Ηλεκτρονική Διακυβέρνηση"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        7
-      ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "Κ10",
+          "code": "Κ22",
+          "type": "required"
+        },
+        {
+          "code": "Κ30",
           "type": "required"
         }
-      ],
-      "offered_this_year": false
+      ]
     },
     {
       "code": "ΥΣ18",
       "title": {
         "el": "Ασύρματα Δίκτυα Αισθητήρων"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "Κ22",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S4": "basic",
-        "S5": "basic"
-      },
-      "instructors": [
-        "Ε. Χατζηευθυμιάδης"
       ]
     },
     {
       "code": "ΥΣ19",
       "title": {
-        "el": "Τεχνητή Νοημοσύνη ΙΙ"
+        "el": "Μεγάλα Γλωσσικά Μοντέλα και Επεξεργασία Φυσικής Γλώσσας"
       },
-      "category": "optional",
+      "category": "basic",
       "hours": {
         "theory": 3,
         "tutorial": 1,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         6
       ],
-      "direction": null,
       "prerequisites": [
         {
-          "code": "ΥΣ02",
+          "code": "ΚΤΝ1",
+          "type": "required"
+        },
+        {
+          "code": "ΚΤΝ2",
           "type": "required"
         }
-      ],
-      "specialization_roles": {
-        "S2": "basic"
-      },
-      "offered_this_year": false
-    },
-    {
-      "code": "ΥΣ20",
-      "title": {
-        "el": "Ιστορία της Πληροφορικής και των Τηλεπικοινωνιών"
-      },
-      "category": "optional",
-      "hours": {
-        "theory": 3,
-        "tutorial": 0,
-        "lab": 0
-      },
-      "ects": 4.0,
-      "semester": [
-        8
-      ],
-      "direction": null,
-      "instructors": [
-        "Α. Τύμπας"
       ]
     },
     {
@@ -3203,17 +2097,16 @@
       "title": {
         "el": "Σχολική Τάξη και Μικροδιδασκαλία"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 2,
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
       "prerequisites": [
         {
           "code": "ΥΣ10",
@@ -3223,50 +2116,82 @@
           "code": "ΥΣ15",
           "type": "required"
         }
-      ],
-      "instructors": [
-        "Α. Γόγουλου (μάθημα υποχρεωτικό για απόκτηση ΠΠΔΕ)"
       ]
     },
     {
       "code": "ΥΣ22",
       "title": {
-        "el": "Ψηφιακή Προσβασιμότητα & Υποστηρικτικές Τεχνολογίες Πληροφορικής"
+        "el": "Ψηφιακή Προσβασιμότητα και Υποστηρικτικές Τεχνολογίες Πληροφορικής"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 2,
         "tutorial": 0,
         "lab": 2
       },
-      "ects": 6.0,
+      "ects": 6,
       "semester": [
         7
-      ],
-      "direction": null,
-      "instructors": [
-        "Γ. Κουρουπέτρογλου",
-        "Α."
       ]
     },
     {
       "code": "ΥΣ24",
       "title": {
-        "el": "Σχεδίαση & Χρήση Περιβαλλόντων η- Μάθησης"
+        "el": "Σχεδίαση και Χρήση Περιβαλλόντων η-Μάθησης"
       },
-      "category": "optional",
+      "category": "elective",
       "hours": {
         "theory": 3,
         "tutorial": 0,
         "lab": 0
       },
-      "ects": 6.0,
+      "ects": 6,
+      "semester": [
+        8
+      ]
+    },
+    {
+      "code": "ΥΣ29",
+      "title": {
+        "el": "Ενσωματωμένα Συστήματα – System-on-Chip"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 3,
+        "tutorial": 1,
+        "lab": 0
+      },
+      "ects": 6,
+      "semester": [
+        7
+      ],
+      "prerequisites": [
+        {
+          "code": "Κ14",
+          "type": "required"
+        }
+      ]
+    },
+    {
+      "code": "ΥΣ99",
+      "title": {
+        "el": "Αξιόπιστα Συστήματα Λογισμικού"
+      },
+      "category": "elective",
+      "hours": {
+        "theory": 4,
+        "tutorial": 0,
+        "lab": 0
+      },
+      "ects": 6,
       "semester": [
         8
       ],
-      "direction": null,
-      "instructors": [
-        "Α. Γόγουλου (μάθημα επιλογής για απόκτηση"
+      "prerequisites": [
+        {
+          "code": "Κ22",
+          "type": "required"
+        }
       ]
     }
   ]

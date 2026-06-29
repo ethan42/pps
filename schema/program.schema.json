@@ -2,53 +2,75 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://dit.uoa.gr/curriculum/schema/program.schema.json",
   "title": "Program",
-  "description": "Top-level metadata and graduation rules for one academic year's undergraduate programme.",
+  "description": "Top-level metadata and graduation rules for the DIT@EKPA undergraduate programme (2026 PPS proposal).",
   "type": "object",
   "additionalProperties": false,
-  "required": ["academic_year", "institution", "department", "degree_title", "directions"],
+  "required": ["academic_year", "institution", "department", "degree_title", "graduation_rules"],
   "properties": {
     "academic_year": {
       "type": "string",
       "pattern": "^[0-9]{4}-[0-9]{4}$",
-      "description": "e.g. 2025-2026."
+      "description": "e.g. 2026-2027."
     },
     "institution": { "$ref": "#/$defs/bilingual" },
     "department": { "$ref": "#/$defs/bilingual" },
     "degree_title": { "$ref": "#/$defs/bilingual" },
-    "directions": {
-      "type": "array",
-      "description": "Κατευθύνσεις: CS and CET.",
-      "minItems": 1,
-      "items": {
-        "type": "object",
-        "additionalProperties": false,
-        "required": ["id", "name"],
-        "properties": {
-          "id": { "type": "string", "enum": ["CS", "CET"] },
-          "name": { "$ref": "#/$defs/bilingual" }
-        }
-      }
-    },
     "graduation_rules": {
       "type": "object",
-      "description": "Structured graduation requirements. Prose from the guide retained in `source_text` for traceability.",
+      "description": "Structured graduation requirements for the 2026 PPS. Prose retained in `source_text` for traceability.",
       "additionalProperties": false,
+      "required": ["total_ects"],
       "properties": {
-        "total_ects": { "type": "number", "exclusiveMinimum": 0 },
-        "min_compulsory_courses": { "type": "integer", "minimum": 0 },
-        "direction_elective_choose": { "type": "integer", "minimum": 0 },
-        "direction_elective_offered": { "type": "integer", "minimum": 0 },
-        "projects_choose": { "type": "integer", "minimum": 0 },
-        "free_courses_max": { "type": "integer", "minimum": 0 },
-        "specialization_award": {
+        "total_ects": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "Minimum ECTS for the degree (240)."
+        },
+        "core": {
+          "$ref": "#/$defs/requirement",
+          "description": "Μαθήματα Κορμού — all must be taken."
+        },
+        "basic": {
+          "$ref": "#/$defs/requirement",
+          "description": "Βασικά Μαθήματα — choose N of M."
+        },
+        "capstone": {
+          "$ref": "#/$defs/requirement",
+          "description": "Συνθετική Εργασία (Capstone Project) — choose N of M."
+        },
+        "thesis_or_internship_ects": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "description": "ECTS for the mutually-exclusive thesis or internship requirement (12)."
+        },
+        "concentrations": {
+          "type": "object",
+          "additionalProperties": false,
+          "description": "At least `required` of `offered` concentrations must be claimed.",
+          "properties": {
+            "required": { "type": "integer", "minimum": 0 },
+            "offered": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "concentration_award": {
           "type": "string",
-          "description": "How a specialization is awarded (e.g. 2 mandatory ΕΥ + 4 of 8 basic optionals)."
+          "description": "How a concentration is awarded (e.g. all 4 basic courses + 3 of its electives)."
         },
         "source_text": { "type": "string" }
       }
     }
   },
   "$defs": {
+    "requirement": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "A 'choose `choose` of `offered`, worth `ects` ECTS' requirement bucket.",
+      "properties": {
+        "choose": { "type": "integer", "minimum": 0 },
+        "offered": { "type": "integer", "minimum": 0 },
+        "ects": { "type": "number", "minimum": 0 }
+      }
+    },
     "bilingual": {
       "type": "object",
       "additionalProperties": false,

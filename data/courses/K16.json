@@ -1,28 +1,16 @@
 {
   "code": "Κ16",
   "title": {
-    "el": "Δίκτυα Επικοινωνιών Ι"
+    "el": "Εισαγωγή στα Δίκτυα Υπολογιστών"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     4
-  ],
-  "direction": null,
-  "prerequisites": [
-    {
-      "code": "Κ13",
-      "type": "recommended"
-    }
-  ],
-  "instructors": [
-    "Ι. Σταυρακάκης",
-    "Κ. Χριστοδουλόπουλος",
-    "Α. Βάιος"
   ]
 }

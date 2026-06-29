@@ -1,0 +1,22 @@
+{
+  "code": "ΥΣ29",
+  "title": {
+    "el": "Ενσωματωμένα Συστήματα – System-on-Chip"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ14",
+      "type": "required"
+    }
+  ]
+}

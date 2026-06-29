@@ -1,0 +1,26 @@
+{
+  "code": "ΚΤΝ5",
+  "title": {
+    "el": "Κβαντικά Συστήματα και Υπολογισμοί"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    8
+  ],
+  "prerequisites": [
+    {
+      "code": "ΕΠ16",
+      "type": "required"
+    },
+    {
+      "code": "Κ12",
+      "type": "required"
+    }
+  ]
+}

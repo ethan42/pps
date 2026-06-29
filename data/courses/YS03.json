@@ -3,17 +3,16 @@
   "title": {
     "el": "Σχεδίαση Ψηφιακών Συστημάτων VHDL"
   },
-  "category": "optional",
+  "category": "basic",
   "hours": {
     "theory": 3,
     "tutorial": 0,
     "lab": 1
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     5
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ02",
@@ -21,14 +20,7 @@
     },
     {
       "code": "Κ14",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S4": "basic"
-  },
-  "instructors": [
-    "Α. Πασχάλης",
-    "Β. Βασιλόπουλος"
   ]
 }

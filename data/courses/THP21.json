@@ -3,19 +3,20 @@
   "title": {
     "el": "Σημασιολογία Γλωσσών Προγραμματισμού"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 4,
     "tutorial": 0,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     8
   ],
-  "direction": null,
-  "specialization_roles": {
-    "S1": "basic",
-    "S2": "basic"
-  }
+  "prerequisites": [
+    {
+      "code": "ΘΠ01",
+      "type": "required"
+    }
+  ]
 }

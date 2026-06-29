@@ -1,17 +1,16 @@
 {
   "code": "Κ03",
   "title": {
-    "el": "Γραμμική Άλγεβρα"
+    "el": "Συνεχή Μαθηματικά: Βασικές Έννοιες Διαφορικού και Διανυσματικού Λογισμού"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
-    "theory": 3,
+    "theory": 4,
     "tutorial": 2,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 7,
   "semester": [
     1
-  ],
-  "direction": null
+  ]
 }

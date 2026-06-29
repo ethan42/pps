@@ -3,25 +3,24 @@
   "title": {
     "el": "Συστήματα Επικοινωνιών"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 1
   },
-  "ects": 7.0,
+  "ects": 6,
   "semester": [
     4
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ11",
-      "type": "recommended"
+      "type": "required"
+    },
+    {
+      "code": "Κ01",
+      "type": "required"
     }
-  ],
-  "instructors": [
-    "Γ. Κανέλλος",
-    "Α. Λυγίζου"
   ]
 }

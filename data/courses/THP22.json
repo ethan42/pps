@@ -1,21 +1,30 @@
 {
   "code": "ΘΠ22",
   "title": {
-    "el": "Αλγόριθμοι- Θεμελιώσεις Μηχανικής Μάθησης"
+    "el": "Αλγόριθμοι-Θεμελιώσεις Μηχανικής Μάθησης"
   },
-  "category": "optional",
+  "category": "basic",
   "hours": {
     "theory": 4,
     "tutorial": 0,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     6
   ],
-  "direction": null,
-  "specialization_roles": {
-    "S1": "basic",
-    "S2": "basic"
-  }
+  "prerequisites": [
+    {
+      "code": "ΚΤΝ1",
+      "type": "required"
+    },
+    {
+      "code": "Κ13",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ2",
+      "type": "required"
+    }
+  ]
 }

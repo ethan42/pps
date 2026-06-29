@@ -1,5 +1,5 @@
 {
-  "academic_year": "2025-2026",
+  "academic_year": "2026-2027",
   "institution": {
     "el": "Εθνικό και Καποδιστριακό Πανεπιστήμιο Αθηνών",
     "en": "National and Kapodistrian University of Athens"
@@ -12,27 +12,14 @@
     "el": "Πληροφορική και Τηλεπικοινωνίες",
     "en": "Informatics and Telecommunications"
   },
-  "directions": [
-    {
-      "id": "CS",
-      "name": {
-        "el": "Επιστήμη Υπολογιστών",
-        "en": "Computer Science"
-      }
-    },
-    {
-      "id": "CET",
-      "name": {
-        "el": "Μηχανική Υπολογιστών και Τηλεπικοινωνιών",
-        "en": "Computer Engineering and Telecoms"
-      }
-    }
-  ],
   "graduation_rules": {
-    "direction_elective_choose": 4,
-    "projects_choose": 1,
-    "free_courses_max": 2,
-    "specialization_award": "Claim a specialization by taking its 2 mandatory ΕΥ courses plus 4 of the 8 optional courses that are basic (Β) to it.",
-    "source_text": "Επιλογή 1η-4η: a student may claim one or two of six specializations by choosing 4 of the 5/6 direction electives (ΕΥ), 1 of 2 projects, and 4 of 8 basic optionals per specialization, plus 0-2 free courses. See guide pp. 61-62. TODO: confirm total_ects and per-category counts."
+    "total_ects": 240,
+    "core": { "choose": 21, "offered": 21, "ects": 138 },
+    "basic": { "choose": 7, "offered": 16, "ects": 42 },
+    "capstone": { "choose": 1, "offered": 5, "ects": 6 },
+    "thesis_or_internship_ects": 12,
+    "concentrations": { "required": 1, "offered": 5 },
+    "concentration_award": "Claim a concentration by passing all 4 of its basic courses plus any 3 of its electives.",
+    "source_text": "Για την απόκτηση του πτυχίου απαιτούνται κατ' ελάχιστον 240 ECTS: 21 Μαθήματα Κορμού (138 ECTS), 7 Βασικά Μαθήματα από 16 προσφερόμενα (42 ECTS), 1 Συνθετική Εργασία/Capstone από 5 (6 ECTS), Πτυχιακή Εργασία (12 ECTS) Ή Πρακτική Άσκηση (12 ECTS, αμοιβαίως αποκλειόμενες), κατοχύρωση τουλάχιστον μίας ειδίκευσης εκ των 5, και επιπλέον μαθήματα επιλογής ώστε το σύνολο να φτάνει τα 240 ECTS."
   }
 }

@@ -1,0 +1,26 @@
+{
+  "code": "ΚΤΝ11",
+  "title": {
+    "el": "Αναπαράσταση Γνώσης και Συλλογιστική"
+  },
+  "category": "basic",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    8
+  ],
+  "prerequisites": [
+    {
+      "code": "ΚΤΝ1",
+      "type": "required"
+    },
+    {
+      "code": "ΥΣ05",
+      "type": "required"
+    }
+  ]
+}

@@ -3,28 +3,20 @@
   "title": {
     "el": "Ασύρματα Δίκτυα Αισθητήρων"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     6
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ22",
       "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S4": "basic",
-    "S5": "basic"
-  },
-  "instructors": [
-    "Ε. Χατζηευθυμιάδης"
   ]
 }

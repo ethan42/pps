@@ -1,31 +1,22 @@
 {
   "code": "ΥΣ08",
   "title": {
-    "el": "Επικοινωνία Ανθρώπου Μηχανής"
+    "el": "Αλληλεπίδραση Ανθρώπου Υπολογιστή"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 1
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
-    7
+    5
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ29",
       "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S2": "basic",
-    "S3": "basic"
-  },
-  "instructors": [
-    "Μ. Ρούσσου",
-    "Α. Κολοβού (μάθημα επιλογής για απόκτηση"
   ]
 }

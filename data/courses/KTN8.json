@@ -1,0 +1,26 @@
+{
+  "code": "ΚΤΝ8",
+  "title": {
+    "el": "Ρομποτικές Επικοινωνίες και Δίκτυα"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ21",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ4",
+      "type": "required"
+    }
+  ]
+}

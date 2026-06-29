@@ -1,0 +1,26 @@
+{
+  "code": "ΣΕ5",
+  "title": {
+    "el": "Ανάπτυξη Λογισμικού για Συστήματα Τεχνητής Νοημοσύνης"
+  },
+  "category": "capstone",
+  "hours": {
+    "theory": 1,
+    "tutorial": 0,
+    "lab": 3
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "ΚΤΝ1",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ2",
+      "type": "required"
+    }
+  ]
+}

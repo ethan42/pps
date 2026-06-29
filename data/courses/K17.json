@@ -3,29 +3,24 @@
   "title": {
     "el": "Αλγόριθμοι και Πολυπλοκότητα"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 4,
     "tutorial": 2,
     "lab": 0
   },
-  "ects": 8.0,
+  "ects": 6,
   "semester": [
     4
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ08",
-      "type": "recommended"
+      "type": "required"
     },
     {
       "code": "Κ09",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "instructors": [
-    "Α. Γιαννοπούλου",
-    "Ο. Φουρτουνέλλη"
   ]
 }

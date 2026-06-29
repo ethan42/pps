@@ -1,0 +1,16 @@
+{
+  "code": "ΚΤΝ1",
+  "title": {
+    "el": "Εισαγωγή στην Τεχνητή Νοημοσύνη"
+  },
+  "category": "core",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    2
+  ]
+}

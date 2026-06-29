@@ -1,26 +1,22 @@
 {
   "code": "Κ08",
   "title": {
-    "el": "Δομές Δεδομένων και Τεχν. Προγραμματισμού"
+    "el": "Δομές Δεδομένων και Τεχνικές Προγραμματισμού"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 1
   },
-  "ects": 7.0,
+  "ects": 8,
   "semester": [
     2
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ04",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "instructors": [
-    "Κ. Χατζηκοκολάκης"
   ]
 }

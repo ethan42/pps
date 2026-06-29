@@ -1,21 +1,17 @@
 {
   "code": "Κ12",
   "title": {
-    "el": "Ηλεκτρομαγνητισμός, Οπτική, Σύγχρονη Φυσική"
+    "el": "Σύγχρονη Φυσική"
   },
-  "category": "compulsory",
+  "category": "basic",
   "hours": {
-    "theory": 4,
-    "tutorial": 4,
+    "theory": 3,
+    "tutorial": 1,
     "lab": 0
   },
-  "ects": 8.0,
+  "ects": 6,
   "semester": [
-    2
+    5
   ],
-  "direction": null,
-  "instructors": [
-    "Δ. Συβρίδης",
-    "Α. Τσίπουρας"
-  ]
+  "notes": "Προσωρινός τίτλος — το όνομα θα οριστικοποιηθεί από τον Γ' Τομέα (όνομα από Γ' Τομέα)."
 }

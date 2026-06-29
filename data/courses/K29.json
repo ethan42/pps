@@ -3,21 +3,20 @@
   "title": {
     "el": "Σχεδίαση και Χρήση Βάσεων Δεδομένων"
   },
-  "category": "compulsory",
+  "category": "core",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 1
   },
-  "ects": 7.0,
+  "ects": 6,
   "semester": [
     4
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ08",
-      "type": "recommended"
+      "type": "required"
     }
   ]
 }

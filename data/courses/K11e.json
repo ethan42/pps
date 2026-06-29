@@ -1,7 +1,7 @@
 {
   "code": "Κ11ε",
   "title": {
-    "el": "Εργαστήριο Κυκλωμάτων και Συστημάτων"
+    "el": "Εργαστήριο Σημάτων και Συστημάτων"
   },
   "category": "standalone_lab",
   "hours": {
@@ -9,9 +9,8 @@
     "tutorial": 0,
     "lab": 2
   },
-  "ects": 2.0,
+  "ects": 2,
   "semester": [
     3
-  ],
-  "direction": null
+  ]
 }

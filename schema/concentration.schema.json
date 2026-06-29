@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://dit.uoa.gr/curriculum/schema/concentration.schema.json",
+  "title": "Concentration",
+  "description": "An Ειδίκευση / Concentration (C1-C5) under the 2026 PPS. Claimed by passing all of its basic courses plus a number of its electives.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "basic_courses", "elective_courses"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "enum": ["C1", "C2", "C3", "C4", "C5"]
+    },
+    "name": { "$ref": "#/$defs/bilingual" },
+    "basic_courses": {
+      "type": "array",
+      "description": "The basic courses of the concentration — all must be passed to claim it.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/courseCode" }
+    },
+    "elective_courses": {
+      "type": "array",
+      "description": "The elective pool of the concentration — a subset must be passed (see program.graduation_rules.concentration_award).",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": { "$ref": "#/$defs/courseCode" }
+    },
+    "award": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "How many of each category are required to claim this concentration.",
+      "properties": {
+        "basic_required": { "type": "integer", "minimum": 0 },
+        "elective_required": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "notes": { "type": "string" }
+  },
+  "$defs": {
+    "courseCode": {
+      "type": "string",
+      "pattern": "^[A-Za-zΑ-Ωα-ωΐΰίϊόάέύϋήώ0-9]{2,12}$"
+    },
+    "bilingual": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["el"],
+      "properties": {
+        "el": { "type": "string", "minLength": 1 },
+        "en": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

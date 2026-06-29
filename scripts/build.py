@@ -24,7 +24,7 @@ def load(path: Path) -> dict:
 def main() -> None:
     bundle = {
         "program": load(DATA / "program.json"),
-        "specializations": [load(p) for p in sorted((DATA / "specializations").glob("*.json"))],
+        "concentrations": [load(p) for p in sorted((DATA / "concentrations").glob("*.json"))],
         "courses": [load(p) for p in sorted((DATA / "courses").glob("*.json"))],
     }
     DIST.mkdir(exist_ok=True)
@@ -34,7 +34,7 @@ def main() -> None:
         fh.write("\n")
     print(
         f"Wrote {out.relative_to(ROOT)}: "
-        f"{len(bundle['courses'])} courses, {len(bundle['specializations'])} specializations."
+        f"{len(bundle['courses'])} courses, {len(bundle['concentrations'])} concentrations."
     )
 
 

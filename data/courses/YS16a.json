@@ -1,0 +1,26 @@
+{
+  "code": "ΥΣ16α",
+  "title": {
+    "el": "Υπολογιστικά Συστήματα Μεγάλης Κλίμακας"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    8
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ22",
+      "type": "required"
+    },
+    {
+      "code": "Κ30",
+      "type": "required"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "code": "ΚΤΝ7",
+  "title": {
+    "el": "Θεωρία και Συστήματα Εκτίμησης"
+  },
+  "category": "elective",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    8
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ35",
+      "type": "required"
+    },
+    {
+      "code": "Κ11",
+      "type": "required"
+    },
+    {
+      "code": "Κ20β",
+      "type": "required"
+    }
+  ]
+}

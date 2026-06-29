@@ -1,0 +1,26 @@
+{
+  "code": "ΣΕ1",
+  "title": {
+    "el": "Ανάπτυξη Λογισμικού για Αλγοριθμικά Προβλήματα"
+  },
+  "category": "capstone",
+  "hours": {
+    "theory": 1,
+    "tutorial": 0,
+    "lab": 3
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ17",
+      "type": "required"
+    },
+    {
+      "code": "Κ25",
+      "type": "required"
+    }
+  ]
+}

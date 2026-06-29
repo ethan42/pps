@@ -1,0 +1,26 @@
+{
+  "code": "ΣΕ4",
+  "title": {
+    "el": "Ανάπτυξη Λογισμικού για Συστήματα Δικτύων και Τηλεπικοινωνιών"
+  },
+  "category": "capstone",
+  "hours": {
+    "theory": 1,
+    "tutorial": 0,
+    "lab": 3
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ16",
+      "type": "required"
+    },
+    {
+      "code": "Κ33",
+      "type": "required"
+    }
+  ]
+}

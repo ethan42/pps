@@ -1,26 +1,30 @@
 {
   "code": "ΕΠ23",
   "title": {
-    "el": "Ανάλυση Εικόνας και Τεχνητή Όραση"
+    "el": "Όραση Υπολογιστών"
   },
-  "category": "optional",
+  "category": "elective",
   "hours": {
     "theory": 3,
     "tutorial": 0,
     "lab": 1
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     7
   ],
-  "direction": null,
   "prerequisites": [
     {
-      "code": "Κ32",
+      "code": "ΚΤΝ1",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ2",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ3",
       "type": "required"
     }
-  ],
-  "instructors": [
-    "Ι. Μαδεμλής"
   ]
 }

@@ -38,19 +38,21 @@ def main() -> int:
 
     course_validator = Draft202012Validator(load(SCHEMA / "course.schema.json"))
     program_validator = Draft202012Validator(load(SCHEMA / "program.schema.json"))
-    spec_validator = Draft202012Validator(load(SCHEMA / "specialization.schema.json"))
+    conc_validator = Draft202012Validator(load(SCHEMA / "concentration.schema.json"))
 
     # --- program ---
     validate_against(program_validator, load(DATA / "program.json"), "program.json", errors)
 
-    # --- specializations ---
-    spec_ids: set[str] = set()
-    for path in sorted((DATA / "specializations").glob("*.json")):
-        spec = load(path)
-        validate_against(spec_validator, spec, path.name, errors)
-        if spec.get("id") in spec_ids:
-            errors.append(f"{path.name}: duplicate specialization id {spec.get('id')}")
-        spec_ids.add(spec.get("id"))
+    # --- concentrations ---
+    concentrations: list[dict] = []
+    conc_ids: set[str] = set()
+    for path in sorted((DATA / "concentrations").glob("*.json")):
+        conc = load(path)
+        validate_against(conc_validator, conc, path.name, errors)
+        if conc.get("id") in conc_ids:
+            errors.append(f"{path.name}: duplicate concentration id {conc.get('id')}")
+        conc_ids.add(conc.get("id"))
+        concentrations.append(conc)
 
     # --- courses ---
     courses: dict[str, dict] = {}
@@ -66,24 +68,23 @@ def main() -> int:
             courses[code] = course
 
     # --- referential integrity ---
+    scheduled = ("core", "basic", "capstone", "standalone_lab", "elective")
     for code, course in courses.items():
         for prereq in course.get("prerequisites", []):
             if prereq["code"] not in courses:
                 warnings.append(f"{code}: prerequisite {prereq['code']} not found in dataset")
-        for sid in course.get("specialization_roles", {}):
-            if sid not in spec_ids:
-                errors.append(f"{code}: references unknown specialization {sid}")
-        if course["category"] in ("direction_elective", "project") and not course.get("direction"):
-            errors.append(f"{code}: category '{course['category']}' requires a direction")
-        core = (
-            "compulsory", "standalone_lab", "direction_elective",
-            "project", "general_education", "optional",
-        )
-        if course["category"] in core:
+        if course["category"] in scheduled:
             if not course.get("semester"):
                 errors.append(f"{code}: category '{course['category']}' requires a semester")
             if "hours" not in course:
                 errors.append(f"{code}: category '{course['category']}' requires hours")
+
+    # --- concentration referential integrity ---
+    for conc in concentrations:
+        for key in ("basic_courses", "elective_courses"):
+            for ccode in conc.get(key, []):
+                if ccode not in courses:
+                    errors.append(f"{conc.get('id')}: {key} references unknown course {ccode}")
 
     # --- report ---
     for w in warnings:
@@ -91,7 +92,7 @@ def main() -> int:
     for e in errors:
         print(f"ERROR {e}")
     print(
-        f"\nChecked {len(courses)} courses, {len(spec_ids)} specializations: "
+        f"\nChecked {len(courses)} courses, {len(conc_ids)} concentrations: "
         f"{len(errors)} error(s), {len(warnings)} warning(s)."
     )
     return 1 if errors else 0

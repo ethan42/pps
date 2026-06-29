@@ -1,0 +1,30 @@
+{
+  "code": "ΚΤΝ4",
+  "title": {
+    "el": "Ομοσπονδιακή Μηχανική Μάθηση"
+  },
+  "category": "basic",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "Κ16",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ2",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ3",
+      "type": "required"
+    }
+  ]
+}

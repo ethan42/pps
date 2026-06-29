@@ -1,29 +1,30 @@
 {
   "code": "Κ33",
   "title": {
-    "el": "Δίκτυα Επικοινωνιών ΙΙ"
+    "el": "Δίκτυα Επικοινωνιών"
   },
-  "category": "direction_elective",
+  "category": "basic",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 1
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
-    5
+    6
   ],
-  "direction": "CET",
   "prerequisites": [
     {
       "code": "Κ16",
       "type": "required"
+    },
+    {
+      "code": "Κ21",
+      "type": "required"
+    },
+    {
+      "code": "Κ20β",
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S5": "mandatory"
-  },
-  "instructors": [
-    "Κ. Χριστοδουλόπουλος"
   ]
 }

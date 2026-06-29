@@ -3,25 +3,20 @@
   "title": {
     "el": "Παράλληλα Συστήματα"
   },
-  "category": "optional",
+  "category": "basic",
   "hours": {
     "theory": 3,
     "tutorial": 1,
     "lab": 0
   },
-  "ects": 6.0,
+  "ects": 6,
   "semester": [
     5
   ],
-  "direction": null,
   "prerequisites": [
     {
       "code": "Κ14",
-      "type": "recommended"
+      "type": "required"
     }
-  ],
-  "specialization_roles": {
-    "S3": "basic",
-    "S4": "basic"
-  }
+  ]
 }

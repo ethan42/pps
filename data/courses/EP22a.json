@@ -1,0 +1,30 @@
+{
+  "code": "ΕΠ22α",
+  "title": {
+    "el": "Ενισχυτική Μηχανική Μάθηση"
+  },
+  "category": "basic",
+  "hours": {
+    "theory": 3,
+    "tutorial": 1,
+    "lab": 0
+  },
+  "ects": 6,
+  "semester": [
+    7
+  ],
+  "prerequisites": [
+    {
+      "code": "ΚΤΝ2",
+      "type": "required"
+    },
+    {
+      "code": "Κ13",
+      "type": "required"
+    },
+    {
+      "code": "ΚΤΝ3",
+      "type": "required"
+    }
+  ]
+}
